@@ -3,6 +3,11 @@ Elearning management System
 
  this is E-learning platform solution to manage online courses and surveys . 
 I use theses technologies for development
+
+ - Windows Azure 
+ 
+ - WIndows Azure SDK 
+ 
  - layred Architecture with DDD and TDD 
 
  - Repository unit of work pattern 
@@ -22,4 +27,5 @@ I use theses technologies for development
  - Unity for Dependecy injection 
 
  - ASP WebAPI for distributed e-learning  services 
+  
  - And others 
