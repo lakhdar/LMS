@@ -1,0 +1,32 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+<header class="header">
+    <div class="top-bar">
+        <div class="container">
+            <ul class="social-icons col-md-6 col-sm-6 col-xs-12 hidden-xs">
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li class="row-end"><a href="#"><i class="fa fa-rss"></i></a></li>
+            </ul>
+
+            @{Html.RenderPartial("_LoginPartial");}
+        </div>
+    </div>
+
+    <div class="header-main container">
+        <h1 class="logo col-md-4 col-sm-4">
+            <a href="index.html">
+                <img id="logo" ng-src="{{'@Url.Content("~/App_JS/compounents/collegeGreen/images/")'+ ($root.currentLogo?$root.currentLogo:'logo')+'.png'}}" alt="@Messages.Logo" />
+            </a>
+        </h1>
+        <div class="info col-md-8 col-sm-8">
+            <ul class="menu-top navbar-right hidden-xs">
+                <li class="divider"><a href="#/">@Messages.Home</a></li>
+                <li class="divider"><a href="#/FAQ">@Messages.FAQ</a></li>
+                <li><a href="#/contact">@Messages.Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>

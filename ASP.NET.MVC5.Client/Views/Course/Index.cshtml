@@ -1,0 +1,168 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@model ASP.NET.MVC5.Client.Models.CourseListViewModel
+@{
+    Layout = null;
+}
+<script>
+    courseVM = function ($scope, $rootScope,sessionStore) {
+        $rootScope.title = "@Messages.Courses";
+        $scope.currentPage = @Html.Raw(Model.CurrentPage)||1;
+        sessionStore.set("courseCurrentPage",$scope.currentPage);
+        $scope.pageSize = @Html.Raw(Model.PageSize)||1;
+        $scope.newstotal = @Html.Raw(Model.PagesCount)||1;
+        $scope.newsTotalpages = Array.apply(null, new Array($scope.newstotal)).map(Number.call, Number);
+
+        $scope.paginate = function (page) {
+            if (page > 0 && page <= $scope.newstotal){
+                $scope.currentPage = page;
+                sessionStore.set("courseCurrentPage",$scope.currentPage);
+            }
+        }
+
+        $scope.sortby = function (item) {
+            return item[$scope.sortedBy];
+        }
+
+        $scope.sortedBy = 0;
+        $scope.courses = @Html.Raw(Html.ToJson(Model));
+
+
+        $scope.testimonials = [
+          {
+              text: 'I’m very happy interdum eget ipsum. Nunc pulvinar ut nulla eget sollicitudin. In hac habitasse platea dictumst. Integer mattis varius ipsum, posuere posuere est porta vel. Integer metus ligula, blandit ut fermentum a, rhoncus in ligula. Duis luctus.',
+              img: 'profile-1.png',
+              title: 'Gravida ultrices',
+              name: 'Marissa Spencer'
+          }, {
+              text: "I'm very pleased commodo gravida ultrices. Sed massa leo, aliquet non velit eu, volutpat vulputate odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse porttitor metus eros, ut fringilla nulla auctor a.",
+              img: 'profile-2.png',
+              title: 'Gravida ultrices',
+              name: 'Marco Antonio'
+          }, {
+              text: "I'm delighted commodo gravida ultrices. Sed massa leo, aliquet non velit eu, volutpat vulputate odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse porttitor metus eros, ut fringilla nulla auctor a.",
+              img: 'profile-3.png',
+              title: 'Gravida ultrices',
+              name: 'Kate White'
+          }
+        ];
+
+
+    }
+</script>
+<div class="content container" ng-controller="courseVM">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix"
+                ng-enumarable
+                templateid="breadcrumb-tmpl"
+                backurl="'home'"
+                backtext="'@Messages.Home'"
+                currenttext="'@Messages.CoursesList'"></header>
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="courses-wrapper col-md-8 col-sm-7">
+
+                    <div class="course-list-header box clearfix">
+                        <div class="summary pull-left">
+                             @Messages.Total :<strong>{{courses.total}}</strong> 
+                        </div>
+                        <div class="sort pull-right">
+                            <label class="control-label pull-left">Sort by: </label>
+                            <select class="sort-options form-control pull-left"
+                                    ng-model="sortedBy"
+                                    ng-options="item.id as item.text for item in courses.columns">
+                                <option value="0"> </option>
+                            </select> 
+                        </div>
+                    </div>
+
+                    <div class="course-item-header row-divider hidden-sm hidden-xs">
+                        <div class="row">
+                            <div class="col-title col-md-4 col-sm-6" ng-repeat="crs in courses.columns | filter:{templateId:'header-tmpl'}"><strong>{{crs.text}}</strong></div>
+                            <div class="col-meta col-md-8 col-sm-6">
+                                <div class="row">
+                                    <div class="col-start col-md-{{crs.span}}" ng-repeat="crs in courses.columns | filter:{templateId:'column-tmpl'}"><strong>{{crs.text}}</strong></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <article class="course-item row-divider" ng-repeat="course in courses.data|orderBy:sortby:false">
+                        <div class="details row">
+                            <div class="col-title col-md-4 col-sm-6">
+                                <a href="#/Courses/Details/{{course[0]}}">{{course[1]}}</a>
+                                <span ng-if="course[5]" class="label "
+                                      ng-class="{'label-success':course[5]=='New','label-warning':course[5]=='Full'}">{{course[6]}}</span>
+                            </div>
+                            <div class="col-meta col-md-8 col-sm-6">
+                                <div class="row">
+                                    <div class="col-start col-md-3">{{course[2]}}</div>
+                                    <div class="col-duration col-md-2">{{course[3]}}</div>
+                                    <div class="col-level col-md-3">{{course[4]}}</div>
+                                    <div class="col-location col-md-4">{{course[5]}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+
+
+                    <ul class="pagination">
+                        <li ng-class="{disabled: currentPage==1}"><a href="javascript:;" ng-click="paginate(currentPage-1)">&laquo;</a></li>
+                        <li class="" ng-class="{active:page==currentPage-1}" ng-repeat="page in newsTotalpages">
+                            <a href="javascript:;" ng-click="$parent.paginate(page+1)">
+                                {{page+1}}
+                                <span class="sr-only" ng-if="page==$parent.currentPage">(current)</span>
+                            </a>
+                        </li>
+                        <li ng-class="{disabled: currentPage==newsTotalpages.length}"><a href="javascript:;" ng-click="paginate(currentPage+1)">&raquo;</a></li>
+                    </ul>
+                </div>
+
+
+
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                    <section class="widget has-divider">
+                        <h3 class="title">@Messages.ApplyOnline</h3>
+                        <p>Donec pulvinar arcu lacus, 20% vel aliquam libero scelerisque a.</p>
+                        <p class="promo-badge">
+                            <a class="FireBush" href="#">
+                                <span class="percentage">20% <span class="off">@Messages.OFF</span></span>
+                                <br>
+                                <span class="desc">@Messages.OnlineApplication</span>
+                            </a>
+                        </p>
+                    </section><!--//widget-->
+
+                    <section class="widget row-divider">
+                        <h3 class="title">@Messages.StudentTestimonials</h3>
+                        <div id="testimonials-carousel" class="testimonials-carousel carousel slide" my-carousel="{ interval: false }">
+                            <div class="carousel-inner">
+                                <div class="item " ng-class="{active:$index==0}" ng-repeat="item in testimonials">
+                                    <blockquote class="quote">
+                                        <p>
+                                            <i class="fa fa-quote-left"></i>
+                                            {{item.text}}
+                                        </p>
+                                    </blockquote>
+                                    <div class="row">
+                                        <p class="people col-md-8 col-sm-3 col-xs-8">
+                                            <span class="name">{{item.name}}</span>
+                                            <br />
+                                            <span class="title">{{item.title}}</span>
+                                        </p>
+                                        <img class="profile col-md-4 pull-right" ng-src="@Url.CdnContentUrl("~/App_JS/compounents/collegeGreen/images/"){{item.img}}" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <a class="prev" href="#testimonials-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+                                <a class="next" href="#testimonials-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+                            </div>
+                        </div>
+                    </section>
+
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>

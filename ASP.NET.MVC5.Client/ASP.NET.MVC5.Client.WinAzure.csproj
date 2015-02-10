@@ -1,0 +1,1954 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D71BA34D-A867-493E-AA0D-DAB1D68B9A92}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ASP.NET.MVC5.Client</RootNamespace>
+    <AssemblyName>ASP.NET.MVC5.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\packages\WindowsAzure.Storage.4.0.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BootStrapper.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Extensions\EventsExtensions.cs" />
+    <Compile Include="Extensions\IoCControllerFactory.cs" />
+    <Compile Include="Extensions\MembershipMapperExtesnion.cs" />
+    <Compile Include="Extensions\NewsModelExtensions.cs" />
+    <Compile Include="Extensions\UnityWebResolver.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\HtmlHelperJson.cs" />
+    <Compile Include="Helpers\HtmlHelperStaticContentAzure.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspnetIdentity\ApplicationSignInManager.cs" />
+    <Compile Include="Models\AspnetIdentity\ApplicationUserManager.cs" />
+    <Compile Include="Models\AspnetIdentity\ApplicationUserValidator.cs" />
+    <Compile Include="Models\AspnetIdentity\ApplicationUser.cs" />
+    <Compile Include="Models\AspnetIdentity\EmailManagementServices.cs" />
+    <Compile Include="Models\AspnetIdentity\EmailModelTokenManegementServiceProvider.cs" />
+    <Compile Include="Models\AspnetIdentity\IApplicationUserStore.cs" />
+    <Compile Include="Models\AspnetIdentity\ApplicationUserStore.cs" />
+    <Compile Include="Models\AspnetIdentity\PhoneNumberModelTokenManagementServiceProvider.cs" />
+    <Compile Include="Models\AspnetIdentity\SmsManagementServices.cs" />
+    <Compile Include="Models\EventsViewModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\NewsViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="WebRole.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\NewsArticles\b35369e3-ac21-c8aa-e553-08d1ca783d33.html" />
+    <Content Include="App_JS\compounents\angular\1.2.16\angular-animate.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\angular-cookies.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\angular-loader.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\angular-mocks.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\angular-resource.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\angular-route.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\angular-sanitize.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\angular-scenario.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\angular-touch.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\angular.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\angular.min.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_af-na.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_af-za.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_af.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_am-et.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_am.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-001.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-ae.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-bh.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-dz.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-eg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-iq.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-jo.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-kw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-lb.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-ly.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-ma.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-om.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-qa.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-sa.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-sd.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-sy.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-tn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar-ye.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ar.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_bg-bg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_bg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_bn-bd.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_bn-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_bn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ca-ad.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ca-es.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ca.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_cs-cz.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_cs.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_da-dk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_da.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_de-at.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_de-be.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_de-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_de-de.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_de-li.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_de-lu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_de.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_el-cy.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_el-gr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_el.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-as.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-au.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-bb.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-be.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-bm.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-bw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-bz.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-ca.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-dsrt-us.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-dsrt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-fm.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-gb.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-gu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-gy.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-hk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-ie.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-iso.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-jm.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-mh.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-mp.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-mt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-mu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-na.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-nz.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-ph.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-pk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-pr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-pw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-sg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-tc.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-tt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-um.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-us.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-vg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-vi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-za.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en-zw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_en.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-419.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-ar.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-bo.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-cl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-co.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-cr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-do.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-ea.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-ec.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-es.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-gq.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-gt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-hn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-ic.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-mx.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-ni.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-pa.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-pe.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-pr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-py.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-sv.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-us.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-uy.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es-ve.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_es.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_et-ee.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_et.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_eu-es.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_eu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fa-af.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fa-ir.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fa.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fi-fi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fil-ph.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fil.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-be.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-bf.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-bi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-bj.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-bl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-ca.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-cd.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-cf.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-cg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-ci.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-dj.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-fr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-ga.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-gf.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-gn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-gp.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-gq.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-km.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-lu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-mc.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-mf.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-mg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-ml.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-mq.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-ne.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-re.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr-yt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_fr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_gl-es.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_gl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_gsw-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_gsw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_gu-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_gu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_he-il.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_he.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_hi-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_hi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_hr-hr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_hr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_hu-hu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_hu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_id-id.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_id.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_is-is.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_is.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_it-it.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_it-sm.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_it.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_iw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ja-jp.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ja.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_kn-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_kn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ko-kr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ko.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ln-cd.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ln.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_lt-lt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_lt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_lv-lv.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_lv.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ml-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ml.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_mr-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_mr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ms-my.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ms.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_mt-mt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_mt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_nl-cw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_nl-nl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_nl-sx.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_nl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_no.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_or-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_or.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_pl-pl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_pl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_pt-br.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_pt-pt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_pt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ro-ro.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ro.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ru-ru.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ru.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sk-sk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sl-si.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sq-al.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sq.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sr-cyrl-rs.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sr-latn-rs.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sv-se.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sv.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sw-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_sw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ta-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ta.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_te-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_te.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_th-th.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_th.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_tl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_tr-tr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_tr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_uk-ua.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_uk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ur-pk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_ur.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_vi-vn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_vi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_zh-cn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_zh-hans-cn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_zh-hk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_zh-tw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_zh.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_zu-za.js" />
+    <Content Include="App_JS\compounents\angular\1.2.16\i18n\angular-locale_zu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-animate.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-animate.min.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-cookies.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-cookies.min.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-csp.css" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-loader.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-loader.min.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-mocks.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-resource.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-resource.min.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-route.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-route.min.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-sanitize.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-sanitize.min.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-scenario.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-touch.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-touch.min.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular.min.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_af-na.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_af-za.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_af.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_am-et.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_am.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-001.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-ae.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-bh.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-dz.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-eg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-iq.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-jo.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-kw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-lb.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-ly.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-ma.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-om.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-qa.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-sa.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-sd.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-sy.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-tn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar-ye.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ar.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_bg-bg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_bg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_bn-bd.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_bn-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_bn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ca-ad.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ca-es.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ca.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_cs-cz.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_cs.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_da-dk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_da.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_de-at.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_de-be.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_de-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_de-de.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_de-li.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_de-lu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_de.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_el-cy.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_el-gr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_el.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-as.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-au.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-bb.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-be.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-bm.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-bw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-bz.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-ca.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-dsrt-us.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-dsrt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-fm.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-gb.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-gu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-gy.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-hk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-ie.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-iso.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-jm.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-mh.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-mp.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-mt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-mu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-na.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-nz.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-ph.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-pk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-pr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-pw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-sg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-tc.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-tt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-um.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-us.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-vg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-vi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-za.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en-zw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_en.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-419.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-ar.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-bo.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-cl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-co.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-cr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-do.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-ea.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-ec.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-es.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-gq.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-gt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-hn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-ic.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-mx.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-ni.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-pa.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-pe.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-pr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-py.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-sv.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-us.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-uy.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es-ve.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_es.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_et-ee.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_et.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_eu-es.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_eu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fa-af.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fa-ir.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fa.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fi-fi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fil-ph.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fil.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-be.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-bf.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-bi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-bj.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-bl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-ca.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-cd.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-cf.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-cg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-ci.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-dj.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-fr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-ga.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-gf.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-gn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-gp.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-gq.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-km.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-lu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-mc.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-mf.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-mg.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-ml.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-mq.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-ne.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-re.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr-yt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_fr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_gl-es.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_gl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_gsw-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_gsw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_gu-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_gu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_he-il.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_he.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_hi-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_hi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_hr-hr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_hr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_hu-hu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_hu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_id-id.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_id.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_is-is.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_is.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_it-it.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_it-sm.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_it.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_iw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ja-jp.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ja.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_kn-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_kn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ko-kr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ko.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ln-cd.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ln.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_lt-lt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_lt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_lv-lv.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_lv.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ml-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ml.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_mr-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_mr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ms-my.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ms.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_mt-mt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_mt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_nl-cw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_nl-nl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_nl-sx.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_nl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_no.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_or-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_or.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_pl-pl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_pl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_pt-br.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_pt-pt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_pt.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ro-ro.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ro.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ru-ru.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ru.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sk-sk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sl-si.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sq-al.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sq.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sr-cyrl-rs.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sr-latn-rs.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sv-se.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sv.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sw-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_sw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ta-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ta.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_te-in.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_te.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_th-th.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_th.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_tl.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_tr-tr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_tr.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_uk-ua.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_uk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ur-pk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_ur.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_vi-vn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_vi.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_zh-cn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_zh-hans-cn.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_zh-hk.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_zh-tw.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_zh.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_zu-za.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\i18n\angular-locale_zu.js" />
+    <Content Include="App_JS\compounents\angular\1.2.9\version.txt" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-animate.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-animate.min.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-aria.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-aria.min.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-cookies.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-cookies.min.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-csp.css" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-loader.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-loader.min.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-messages.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-messages.min.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-mocks.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-resource.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-resource.min.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-route.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-route.min.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-sanitize.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-sanitize.min.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-scenario.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-touch.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-touch.min.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular.min.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_aa-dj.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_aa-er.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_aa-et.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_aa.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_af-na.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_af-za.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_af.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_agq-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_agq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ak-gh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ak.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_am-et.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_am.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-001.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-ae.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-bh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-dj.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-dz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-eg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-eh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-er.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-il.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-iq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-jo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-km.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-kw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-lb.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-ly.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-ma.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-mr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-om.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-ps.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-qa.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-sa.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-sd.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-so.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-ss.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-sy.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-td.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-tn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar-ye.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ar.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_as-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_as.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_asa-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_asa.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ast-es.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ast.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_az-cyrl-az.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_az-cyrl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_az-latn-az.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_az-latn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_az.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bas-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bas.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_be-by.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_be.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bem-zm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bem.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bez-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bez.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bg-bg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bm-ml.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bn-bd.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bn-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bo-cn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bo-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_br-fr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_br.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_brx-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_brx.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bs-cyrl-ba.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bs-cyrl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bs-latn-ba.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bs-latn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_bs.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_byn-er.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_byn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ca-ad.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ca-es-valencia.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ca-es.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ca-fr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ca-it.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ca.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_cgg-ug.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_cgg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_chr-us.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_chr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ckb-arab-iq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ckb-arab-ir.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ckb-arab.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ckb-iq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ckb-ir.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ckb-latn-iq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ckb-latn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ckb.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_cs-cz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_cs.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_cy-gb.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_cy.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_da-dk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_da-gl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_da.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_dav-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_dav.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_de-at.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_de-be.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_de-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_de-de.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_de-li.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_de-lu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_de.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_dje-ne.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_dje.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_dua-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_dua.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_dyo-sn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_dyo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_dz-bt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_dz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ebu-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ebu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ee-gh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ee-tg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ee.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_el-cy.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_el-gr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_el.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-001.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-150.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ag.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ai.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-as.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-au.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-bb.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-be.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-bm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-bs.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-bw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-bz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ca.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-cc.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ck.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-cx.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-dg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-dm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-dsrt-us.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-dsrt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-er.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-fj.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-fk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-fm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-gb.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-gd.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-gg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-gh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-gi.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-gm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-gu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-gy.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-hk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ie.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-im.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-io.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-iso.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-je.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-jm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ki.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-kn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ky.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-lc.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-lr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ls.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-mg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-mh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-mo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-mp.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ms.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-mt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-mu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-mw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-na.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-nf.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ng.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-nr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-nu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-nz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-pg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ph.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-pk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-pn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-pr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-pw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-rw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-sb.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-sc.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-sd.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-sg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-sh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-sl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ss.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-sx.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-sz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-tc.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-tk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-to.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-tt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-tv.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ug.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-um.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-us.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-vc.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-vg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-vi.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-vu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-ws.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-za.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-zm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en-zw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_en.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_eo-001.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_eo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-419.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-ar.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-bo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-cl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-co.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-cr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-cu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-do.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-ea.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-ec.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-es.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-gq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-gt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-hn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-ic.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-mx.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-ni.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-pa.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-pe.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-ph.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-pr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-py.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-sv.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-us.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-uy.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es-ve.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_es.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_et-ee.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_et.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_eu-es.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_eu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ewo-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ewo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fa-af.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fa-ir.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fa.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ff-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ff-gn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ff-mr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ff-sn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ff.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fi-fi.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fi.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fil-ph.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fil.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fo-fo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-be.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-bf.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-bi.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-bj.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-bl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-ca.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-cd.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-cf.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-cg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-ci.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-dj.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-dz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-fr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-ga.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-gf.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-gn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-gp.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-gq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-ht.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-km.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-lu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-ma.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-mc.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-mf.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-mg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-ml.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-mq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-mr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-mu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-nc.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-ne.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-pf.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-pm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-re.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-rw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-sc.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-sn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-sy.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-td.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-tg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-tn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-vu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-wf.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr-yt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fur-it.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fur.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fy-nl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_fy.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ga-ie.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ga.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_gd-gb.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_gd.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_gl-es.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_gl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_gsw-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_gsw-li.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_gsw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_gu-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_gu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_guz-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_guz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_gv-im.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_gv.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ha-latn-gh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ha-latn-ne.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ha-latn-ng.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ha-latn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ha.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_haw-us.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_haw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_he-il.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_he.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_hi-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_hi.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_hr-ba.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_hr-hr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_hr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_hu-hu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_hu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_hy-am.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_hy.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ia-fr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ia.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_id-id.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_id.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ig-ng.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ig.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ii-cn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ii.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_is-is.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_is.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_it-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_it-it.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_it-sm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_it.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_iw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ja-jp.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ja.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_jgo-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_jgo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_jmc-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_jmc.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ka-ge.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ka.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kab-dz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kab.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kam-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kam.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kde-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kde.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kea-cv.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kea.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_khq-ml.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_khq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ki-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ki.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kk-cyrl-kz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kk-cyrl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kkj-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kkj.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kl-gl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kln-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kln.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_km-kh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_km.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kn-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ko-kp.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ko-kr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ko.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kok-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kok.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ks-arab-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ks-arab.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ks.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ksb-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ksb.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ksf-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ksf.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ksh-de.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ksh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kw-gb.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_kw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ky-cyrl-kg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ky-cyrl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ky.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lag-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lag.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lg-ug.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lkt-us.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lkt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ln-ao.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ln-cd.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ln-cf.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ln-cg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ln.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lo-la.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lt-lt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lu-cd.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_luo-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_luo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_luy-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_luy.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lv-lv.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_lv.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mas-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mas-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mas.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mer-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mer.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mfe-mu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mfe.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mg-mg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mgh-mz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mgh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mgo-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mgo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mk-mk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ml-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ml.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mn-cyrl-mn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mn-cyrl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mr-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ms-bn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ms-latn-bn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ms-latn-my.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ms-latn-sg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ms-latn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ms-my.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ms.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mt-mt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mua-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_mua.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_my-mm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_my.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_naq-na.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_naq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nb-no.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nb-sj.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nb.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nd-zw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nd.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ne-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ne-np.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ne.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nl-aw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nl-be.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nl-bq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nl-cw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nl-nl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nl-sr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nl-sx.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nmg-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nmg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nn-no.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nnh-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nnh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_no-no.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_no.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nr-za.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nso-za.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nso.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nus-sd.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nus.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nyn-ug.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_nyn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_om-et.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_om-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_om.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_or-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_or.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_os-ge.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_os-ru.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_os.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pa-arab-pk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pa-arab.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pa-guru-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pa-guru.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pa.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pl-pl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ps-af.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ps.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pt-ao.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pt-br.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pt-cv.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pt-gw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pt-mo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pt-mz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pt-pt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pt-st.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pt-tl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_pt.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_rm-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_rm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_rn-bi.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_rn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ro-md.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ro-ro.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ro.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_rof-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_rof.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ru-by.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ru-kg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ru-kz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ru-md.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ru-ru.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ru-ua.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ru.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_rw-rw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_rw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_rwk-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_rwk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sah-ru.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sah.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_saq-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_saq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sbp-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sbp.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_se-fi.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_se-no.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_se.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_seh-mz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_seh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ses-ml.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ses.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sg-cf.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_shi-latn-ma.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_shi-latn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_shi-tfng-ma.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_shi-tfng.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_shi.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_si-lk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_si.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sk-sk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sl-si.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sn-zw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_so-dj.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_so-et.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_so-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_so-so.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_so.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sq-al.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sq-mk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sq-xk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sr-cyrl-ba.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sr-cyrl-me.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sr-cyrl-rs.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sr-cyrl-xk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sr-cyrl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sr-latn-ba.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sr-latn-me.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sr-latn-rs.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sr-latn-xk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sr-latn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ss-sz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ss-za.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ss.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ssy-er.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ssy.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_st-ls.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_st-za.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_st.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sv-ax.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sv-fi.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sv-se.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sv.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sw-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sw-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sw-ug.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_sw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_swc-cd.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_swc.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ta-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ta-lk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ta-my.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ta-sg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ta.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_te-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_te.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_teo-ke.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_teo-ug.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_teo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tg-cyrl-tj.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tg-cyrl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_th-th.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_th.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ti-er.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ti-et.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ti.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tig-er.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tig.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tn-bw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tn-za.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_to-to.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_to.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tr-cy.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tr-tr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ts-za.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ts.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_twq-ne.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_twq.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tzm-latn-ma.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tzm-latn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_tzm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ug-arab-cn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ug-arab.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ug.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_uk-ua.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_uk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ur-in.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ur-pk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ur.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_uz-arab-af.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_uz-arab.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_uz-cyrl-uz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_uz-cyrl.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_uz-latn-uz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_uz-latn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_uz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_vai-latn-lr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_vai-latn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_vai-vaii-lr.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_vai-vaii.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_vai.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ve-za.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_ve.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_vi-vn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_vi.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_vo-001.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_vo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_vun-tz.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_vun.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_wae-ch.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_wae.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_wal-et.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_wal.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_xh-za.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_xh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_xog-ug.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_xog.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_yav-cm.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_yav.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_yo-bj.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_yo-ng.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_yo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zgh-ma.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zgh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-cn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-hans-cn.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-hans-hk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-hans-mo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-hans-sg.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-hans.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-hant-hk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-hant-mo.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-hant-tw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-hant.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-hk.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh-tw.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zh.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zu-za.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\i18n\angular-locale_zu.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\version.txt" />
+    <Content Include="App_JS\compounents\backtotop\back-to-top.js" />
+    <Content Include="App_JS\compounents\bootstrapHoverDropdown\bootstrap-hover-dropdown.min.js" />
+    <Content Include="App_JS\compounents\bootstrap\2.0.1\css\bootstrap-responsive.css" />
+    <Content Include="App_JS\compounents\bootstrap\2.0.1\css\bootstrap-responsive.min.css" />
+    <Content Include="App_JS\compounents\bootstrap\2.0.1\css\bootstrap.css" />
+    <Content Include="App_JS\compounents\bootstrap\2.0.1\css\bootstrap.min.css" />
+    <Content Include="App_JS\compounents\bootstrap\2.0.1\img\glyphicons-halflings-white.png" />
+    <Content Include="App_JS\compounents\bootstrap\2.0.1\img\glyphicons-halflings.png" />
+    <Content Include="App_JS\compounents\bootstrap\2.0.1\js\bootstrap.js" />
+    <Content Include="App_JS\compounents\bootstrap\2.0.1\js\bootstrap.min.js" />
+    <Content Include="App_JS\compounents\bootstrap\3.0.0\css\bootstrap-theme.css" />
+    <Content Include="App_JS\compounents\bootstrap\3.0.0\css\bootstrap-theme.min.css" />
+    <Content Include="App_JS\compounents\bootstrap\3.0.0\css\bootstrap.css" />
+    <Content Include="App_JS\compounents\bootstrap\3.0.0\css\bootstrap.min.css" />
+    <Content Include="App_JS\compounents\bootstrap\3.0.0\js\bootstrap.js" />
+    <Content Include="App_JS\compounents\bootstrap\3.0.0\js\bootstrap.min.js" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\css\bootstrap-theme.css" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\css\bootstrap-theme.min.css" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\css\bootstrap.css" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\css\bootstrap.min.css" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\js\bootstrap.js" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\js\bootstrap.min.js" />
+    <Content Include="App_JS\compounents\collegeGreen\font.css" />
+    <Content Include="App_JS\compounents\collegeGreen\images\750x300-about.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\award1.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\award2.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\award3.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\award4.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\award5 %281%29.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\award5.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\award6 %281%29.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\award6.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\award7.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\course-thumb-1.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\course-thumb-2.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\course-thumb-3.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\course-thumb-4.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\gallery-thumb-1.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\gallery-thumb-10.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\gallery-thumb-11.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\gallery-thumb-12.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\gallery-thumb-2.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\gallery-thumb-4.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\gallery-thumb-5.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\gallery-thumb-7.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\gallery-thumb-8.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\gallery-thumb-9.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\logo-green.png" />
+    <Content Include="App_JS\compounents\collegeGreen\images\logo-purple.png" />
+    <Content Include="App_JS\compounents\collegeGreen\images\logo-red.png" />
+    <Content Include="App_JS\compounents\collegeGreen\images\logo.png" />
+    <Content Include="App_JS\compounents\collegeGreen\images\news-1.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\news-thumb-1.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\news-thumb-2.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\news-thumb-3.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\news-thumb-4.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\news-thumb-5.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\news-thumb-6.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\profile-1.png" />
+    <Content Include="App_JS\compounents\collegeGreen\images\profile-2.png" />
+    <Content Include="App_JS\compounents\collegeGreen\images\profile-3.png" />
+    <Content Include="App_JS\compounents\collegeGreen\images\slide-1.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\slide-2.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\slide-3.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\slide-4.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\sncf.png" />
+    <Content Include="App_JS\compounents\collegeGreen\images\team-1.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\team-2.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\team-3.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\images\team-4.jpg" />
+    <Content Include="App_JS\compounents\collegeGreen\styles-green.css" />
+    <Content Include="App_JS\compounents\collegeGreen\styles-purple.css" />
+    <Content Include="App_JS\compounents\collegeGreen\styles-red.css" />
+    <Content Include="App_JS\compounents\collegeGreen\styles.css" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\changelog.txt" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\basic-carousel.html" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\carousel-min-max.html" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\css\demo.css" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\dynamic-carousel-min-max.html" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-medium\svg\1110FC_0.svg" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-medium\svg\svg_test.html" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-regular\svg\11014B_0.svg" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-regular\svg\svg_test.html" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-semibold\svg\index.html" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-semibold\svg\style_169898.svg" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\images\kitchen_adventurer_caramel.jpg" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\images\kitchen_adventurer_cheesecake_brownie.jpg" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\images\kitchen_adventurer_donut.jpg" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\images\kitchen_adventurer_lemon.jpg" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\images\logo.png" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\index.html" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\js\demo.js" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\js\froogaloop.js" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\js\jquery.easing.js" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\js\jquery.fitvid.js" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\js\jquery.mousewheel.js" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\js\modernizr.js" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\js\shBrushCss.js" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\js\shBrushJScript.js" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\js\shBrushXml.js" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\js\shCore.js" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\thumbnail-controlnav.html" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\thumbnail-slider.html" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\video-wistia.html" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\video.html" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\flexslider.css" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\fonts\flexslider-icon.svg" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\images\bg_play_pause.png" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\jquery.flexslider-min.js" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\jquery.flexslider.js" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\css\font-awesome.css" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\css\font-awesome.min.css" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\fonts\fontawesome-webfont.svg" />
+    <Content Include="App_JS\compounents\gmaps\gmaps.js" />
+    <Content Include="App_JS\compounents\gmaps\map.js" />
+    <Content Include="App_JS\compounents\html5shiv\3.7.0\html5shiv.js" />
+    <Content Include="App_JS\compounents\jflickrfeed\jflickrfeed.min.js" />
+    <Content Include="App_JS\compounents\jquery\1.11.1\jquery.js" />
+    <Content Include="App_JS\compounents\jquery\1.11.1\jquery.min.js" />
+    <Content Include="App_JS\compounents\jquery\2.1.1\jquery.js" />
+    <Content Include="App_JS\compounents\jquery\2.1.1\jquery.min.js" />
+    <Content Include="App_JS\compounents\modernizr\2.6.2\modernizr.js" />
+    <Content Include="App_JS\compounents\placeholder\2.0.7\jquery.placeholder.js" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\css\prettyPhoto.css" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\fullscreen\1.jpg" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\fullscreen\2.jpg" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\fullscreen\3.jpg" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\fullscreen\4.jpg" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\fullscreen\5.jpg" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\fullscreen\6.jpg" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\fullscreen\high.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\fullscreen\huge.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\fullscreen\wide.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\default\loader.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\default\sprite.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\thumbnails\flash-logo.png" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\thumbnails\quicktime-logo.gif" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\thumbnails\t_1.jpg" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\thumbnails\t_2.jpg" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\thumbnails\t_3.jpg" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\thumbnails\t_4.jpg" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\images\thumbnails\t_5.jpg" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\js\jquery-1.3.2.min.js" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\js\jquery-1.4.4.min.js" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\js\jquery-1.6.1.min.js" />
+    <Content Include="App_JS\compounents\prettyPhoto\3.1.5\js\jquery.prettyPhoto.js" />
+    <Content Include="App_JS\compounents\respond\respond.js" />
+    <Content Include="App_JS\compounents\respond\respond.min.js" />
+    <Content Include="App_JS\compounents\toastr\2.0.1\css\toastr.css" />
+    <Content Include="App_JS\compounents\toastr\2.0.1\css\toastr.min.css" />
+    <Content Include="App_JS\compounents\toastr\2.0.1\js\toastr.js" />
+    <Content Include="App_JS\compounents\toastr\2.0.1\js\toastr.min.js" />
+    <Content Include="App_JS\ng-app\app.js" />
+    <Content Include="App_JS\ng-app\config.js" />
+    <Content Include="App_JS\ng-app\directives\Controls\ng-enumarable.js" />
+    <Content Include="App_JS\ng-app\directives\ng-carousel.js" />
+    <Content Include="App_JS\ng-app\directives\ng-flexslider.js" />
+    <Content Include="App_JS\ng-app\factories\logger.js" />
+    <Content Include="App_JS\ng-app\services\sessionStore.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-animate.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-aria.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-cookies.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-loader.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-messages.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-resource.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-route.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-sanitize.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular-touch.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.3.0\angular.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.3.0\errors.json" />
+    <Content Include="App_JS\compounents\angular\1.3.0\version.json" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-animate.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-cookies.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-loader.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-resource.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-route.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-sanitize.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular-touch.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.2.9\angular.min.js.map" />
+    <Content Include="App_JS\compounents\angular\1.2.9\errors.json" />
+    <Content Include="App_JS\compounents\angular\1.2.9\version.json" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\css\bootstrap-theme.css.map" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\css\bootstrap.css.map" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_JS\compounents\bootstrap\3.1.1\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\fonts\fontawesome-webfont.eot" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\fonts\fontawesome-webfont.ttf" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\fonts\fontawesome-webfont.woff" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\fonts\FontAwesome.otf" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\bordered-pulled.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\core.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\fixed-width.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\font-awesome.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\icons.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\larger.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\list.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\mixins.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\path.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\rotated-flipped.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\spinning.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\stacked.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\less\variables.less" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\font-awesome.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_bordered-pulled.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_core.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_fixed-width.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_icons.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_larger.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_list.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_mixins.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_path.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_rotated-flipped.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_spinning.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_stacked.scss" />
+    <Content Include="App_JS\compounents\font-awesome\4.0.3\scss\_variables.scss" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-medium\eot\1110FC_0.eot" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-medium\ttf\1110FC_0.ttf" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-medium\woff\1110FC_0.woff" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-regular\eot\11014B_0.eot" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-regular\ttf\11014B_0.ttf" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-regular\woff\11014B_0.woff" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-semibold\eot\style_169898.eot" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-semibold\ttf\style_169898.ttf" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\demo\fonts\webfonts\geo-semibold\woff\style_169898.woff" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\fonts\flexslider-icon.eot" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\fonts\flexslider-icon.ttf" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\fonts\flexslider-icon.woff" />
+    <Content Include="App_JS\compounents\FlexSlider\2.2.2\README.mdown" />
+    <Content Include="App_JS\compounents\collegeGreen\fonts\cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff" />
+    <Content Include="App_JS\compounents\collegeGreen\fonts\DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff" />
+    <Content Include="App_JS\compounents\collegeGreen\fonts\k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff" />
+    <Content Include="App_JS\compounents\collegeGreen\fonts\MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff" />
+    <None Include="Properties\PublishProfiles\PC-window81Publish.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Config.cshtml" />
+    <Content Include="Views\Home\_Slider.cshtml" />
+    <Content Include="Views\Home\_Testimonial.cshtml" />
+    <Content Include="Views\Home\_LatestNews.cshtml" />
+    <Content Include="Views\Home\_UpcomingEvents.cshtml" />
+    <Content Include="Views\Home\_CourseFinder.cshtml" />
+    <Content Include="Views\Home\_Videos.cshtml" />
+    <Content Include="Views\Home\_Awards.cshtml" />
+    <Content Include="Views\Account\LoginPartial.cshtml" />
+    <Content Include="Views\Account\_LoginLayout.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\News\Details.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Course\Catalog.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\Privacy.cshtml" />
+    <Content Include="Views\Home\TermsOfUse.cshtml" />
+    <Content Include="Views\Shared\_AsideEvents.cshtml" />
+    <Content Include="Views\Shared\_AsideNews.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_JS\ng-app\controllers\" />
+    <Folder Include="App_JS\ng-app\directives\validation\" />
+    <Folder Include="App_JS\ng-app\filters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application.BoundedConext\Application.BoundedContext.Cloud.csproj">
+      <Project>{42a443bf-1697-40e8-89d9-93b8d8864aea}</Project>
+      <Name>Application.BoundedContext.Cloud</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Application.Core\Application.Core.csproj">
+      <Project>{b88452ea-701d-497d-bead-7530e0c66cd3}</Project>
+      <Name>Application.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.BoundedContext\Domain.BoundedContext.Cloud.csproj">
+      <Project>{8b5b6be1-a516-4143-92f7-9ff87f9d149f}</Project>
+      <Name>Domain.BoundedContext.Cloud</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Core\Domain.Core.csproj">
+      <Project>{a4f6a96e-9b33-4143-906e-7c43dbe7baa4}</Project>
+      <Name>Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting.IoC\Infrastructure.CrossCutting.IoC.Cloud.csproj">
+      <Project>{cb70ef26-bed3-46f8-9df0-95ea869e822c}</Project>
+      <Name>Infrastructure.CrossCutting.IoC.Cloud</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting.NetFramework\Infrastructure.CrossCutting.NetFramework.csproj">
+      <Project>{e8ac6cd3-e959-41b9-bddf-b8599c1cd066}</Project>
+      <Name>Infrastructure.CrossCutting.NetFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.CrossCutting.SeedWork\Infrastructure.CrossCutting.SeedWork.csproj">
+      <Project>{25552dfb-b74e-4395-9fc2-35827240a43c}</Project>
+      <Name>Infrastructure.CrossCutting.SeedWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Data.BoundedContext\Infrastructure.Data.BoundedContext.Cloud.csproj">
+      <Project>{81c97cc2-0c73-4e06-a212-ddb4cc2863e2}</Project>
+      <Name>Infrastructure.Data.BoundedContext.Cloud</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure.Data.Core\Infrastructure.Data.Core.Cloud.csproj">
+      <Project>{253a0951-9555-4ed9-8e5d-4b2a6923bfbb}</Project>
+      <Name>Infrastructure.Data.Core.Cloud</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9886</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/LMS.Azure</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

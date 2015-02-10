@@ -1,0 +1,17 @@
+﻿<div class="config-wrapper hidden-xs">
+    <div class="config-wrapper-inner">
+        <a id="config-trigger" class="config-trigger" href="javascript:;" ng-click="triggred=!!!triggred">
+            <i class="fa fa-cog"></i> 
+        </a>
+        <div id="config-panel" class="config-panel" ng-if="triggred">
+            <p>Choose Colour</p>
+            <ul id="color-options" class="list-unstyled list-inline"
+                ng-init="styles=['','green','purple','red'];activeItem=0">
+                <li class="{{item}}"  ng-class="{default:!!!item,active:activeItem==$index}" ng_repeat="item in styles">
+                    <a href="javascript:;" ng-click="$root.currentStyle='styles'+(item?'-'+item:item);$root.currentLogo='logo'+(item?'-'+item:item);activeItem=$index"></a>
+                </li>
+            </ul> 
+            <a id="config-close" class="close" href="javascript:;" ng-click="$parent.triggred=false"><i class="fa fa-times-circle"></i></a>
+        </div> 
+    </div> 
+</div> 

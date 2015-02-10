@@ -1,0 +1,35 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="login-link pull-right relative">
+            <li>
+                @*@Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-toggle", data_toggle="dropdown"})*@
+                <a href="@Url.Action("Manage/index")" class="dropdown-toggle" data-toggle="dropdown" id="loginstatus">
+                    <span class="hidden-xs">@Html.Raw(User.Identity.GetUserName())</span> <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu dropdown" role="menu">
+                    <li><a href="user-profile.html"><i class="fa fa-user"></i>@Messages.Profile</a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i>@Messages.Settings</a></li>
+                    <li><a href="#"><i class="fa fa-envelope-o"></i>>@Messages.MessagesMsg</a></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()" id="logoff">@Messages.LogOff</a></li>
+                </ul>
+            </li>
+        </ul>
+    }
+}
+else
+{
+    @*<ul class="nav navbar-nav navbar-right">
+             <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        </ul>*@
+    <ul class="login-link pull-right">
+        <li><a href="#/login" id="logon" >@Messages.Login</a></li>
+    </ul>
+}
+

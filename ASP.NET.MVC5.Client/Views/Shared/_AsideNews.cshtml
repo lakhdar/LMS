@@ -1,0 +1,10 @@
+﻿<h3 class="title">{{caption}}</h3>
+<article class="news-item row" ng-repeat="item in data">
+    <figure class="thumb col-md-2">
+        <img ng-src="@Url.CdnContentUrl("~/App_JS/compounents/collegeGreen/images/"){{item.img}}" alt="">
+    </figure>
+    <div class="details col-md-10">
+        <h4 class="title"><a href="#/News/Details/{{item.id}}">{{item.tilte}}</a></h4>
+    </div>
+</article>
+

@@ -1,0 +1,84 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@{
+    Layout = null;
+}
+
+<script>
+    contactVM = function ($scope, $rootScope) {
+        $rootScope.title = "@Messages.Contact";
+    }
+</script>
+
+<div class="content container" ng-controller="contactVM">
+    <div class="page-wrapper">
+
+        <header class="page-heading clearfix"
+                ng-enumarable
+                templateid="breadcrumb-tmpl"
+                backurl="'home'"
+                backtext="'@Messages.Home'"
+                currenttext="'@Messages.Contact'"></header>
+
+        <div class="page-content">
+            <div class="row">
+                <article class="contact-form col-md-8 col-sm-7  page-row">
+                    <h3 class="title">@Messages.GetInTouch</h3>
+                    <p>
+                        We’d love to hear from you. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nullam ut erat magna. Aliquam porta sem a lacus imperdiet posuere. Integer semper eget ligula id eleifend.
+                    </p>
+                    <form>
+                        <div class="form-group name">
+                            <label for="name">@Messages.Name</label>
+                            <input id="name" type="text" class="form-control" placeholder="@Messages.EnterYourName">
+                        </div>
+                        <div class="form-group email">
+                            <label for="email">@Messages.Email<span class="required">*</span></label>
+                            <input id="email" type="email" class="form-control" placeholder="@Messages.EnterYourEmail">
+                        </div>
+                        <div class="form-group phone">
+                            <label for="phone">@Messages.Phone</label>
+                            <input id="phone" type="tel" class="form-control" placeholder="@Messages.EnterYourContactNumber">
+                        </div>
+                        <div class="form-group message">
+                            <label for="message">@Messages.MessageMsg<span class="required">*</span></label>
+                            <textarea id="message" class="form-control" rows="6" placeholder="@Messages.EnterYourMessageHere"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-theme">@Messages.SendMessage</button>
+                    </form>
+                </article>
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                    <section class="widget has-divider">
+                        <h3 class="title">Download Prospectus</h3>
+                        <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus, vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
+                        <a class="btn btn-theme" href="#"><i class="fa fa-download"></i>Download now</a>
+                    </section>
+
+                    <section class="widget has-divider">
+                        <h3 class="title">@Messages.PostalAddress</h3>
+                        <p class="adr">
+                            <span class="adr-group">
+                                <span class="street-address">LMSystem</span><br>
+                                <span class="region">56 College Green Road</span><br>
+                                <span class="postal-code">BS16 AP18</span><br>
+                                <span class="country-name">UK</span>
+                            </span>
+                        </p>
+                    </section>
+
+                    <section class="widget">
+                        <h3 class="title">@Messages.AllEnquiries</h3>
+                        <p class="tel"><i class="fa fa-phone"></i>@Messages.Tel: 0800 123 4567</p>
+                        <p class="email"><i class="fa fa-envelope"></i>@Messages.Email: <a href="javascript:;">enquires@website.com</a></p>
+                    </section>
+                </aside>
+            </div>
+            <div class="page-row">
+                <article class="map-section">
+                    <h3 class="title">@Messages.HowToFindUs</h3>
+                    <div id="map"></div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div> 

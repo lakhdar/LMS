@@ -1,0 +1,17 @@
+﻿<h1 class="section-heading text-highlight"><span class="line">Course Finder</span></h1>
+<div class="section-content">
+    <form class="course-finder-form" action="#" method="get">
+        <div class="row">
+            <div class="col-md-5 col-sm-5 subject">
+                <select ng-model="courseCategory" ng-options="cat.text for cat in courseCategories track by cat.id" class="form-control subject">
+                    <option value="">Choose a subject area</option>
+                </select>
+            </div>
+            <div class="col-md-7 col-sm-7 keywords">
+                <input class="form-control pull-left" type="text" placeholder="Search keywords" />
+                <button type="submit" class="btn btn-theme"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </form> 
+    <a class="read-more" href="courses.html">View all our courses<i class="fa fa-chevron-right"></i></a>
+</div> 

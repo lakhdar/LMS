@@ -1,0 +1,53 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@model ASP.NET.MVC5.Client.Models.NewsDetailViewModel
+@{
+    Layout = null;
+}
+<script>
+    newsDetailsVM = function ($scope, $rootScope) {
+        $rootScope.title = "@Model.Tilte";
+        $scope.otherNewsList =@Html.Raw(Html.ToJson(Model.OtherNewsList));
+        var evnts = @Html.Raw(Html.ToJson(Model.EventsList));
+        $scope.eventsList =(evnts||[]).map(function(item){
+            item.dateStart=new Date(item.dateStart);
+            item.dateEnd=new Date(item.dateEnd);
+            return item;
+        });
+    }
+
+</script>
+
+<div class="content container" ng-controller="newsDetailsVM">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix"
+                ng-enumarable
+                templateid="breadcrumb-tmpl"
+                backurl="'home'"
+                backtext="'@Messages.Home'"
+                currenttext="'@Model.Tilte'"></header>
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="news-wrapper col-md-8 col-sm-7">
+
+                    <article class="news-item">
+                        <p class="meta text-muted">@Messages.By: <a href="#">Admin</a> | @Messages.PostedOn: @Model.PublishDate</p>
+                        @Html.Raw(Model.Text)
+                    </article>
+                </div>
+
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                    <section class="widget has-divider"
+                             ng-enumarable
+                             templateid="aside-news-tmpl"
+                             items="otherNewsList"
+                             caption="'@Messages.OtherNews'"></section>
+                    <section class="widget has-divider"
+                             ng-enumarable
+                             templateid="aside-events-tmpl"
+                             items="eventsList"
+                             caption="'@Messages.UpcomingEvents'"></section>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div> 

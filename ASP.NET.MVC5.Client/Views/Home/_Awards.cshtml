@@ -1,0 +1,18 @@
+﻿<div id="awards-carousel" class="awards-carousel carousel slide" my-carousel="{ interval: false }">
+    <div class="carousel-inner">
+        <div class="item " ng-class="{active:$index==0}" ng-repeat="item in awards">
+            <ul class="logos">
+                <li class="col-md-2 col-sm-2 col-xs-4" ng-repeat="awrd in item">
+                    <a href="#"><img class="img-responsive" ng-src="{{awrd.img}}" alt="" /></a>
+                </li>
+            </ul> 
+        </div> 
+    </div> 
+    <a class="left carousel-control" href="#awards-carousel" data-slide="prev">
+        <i class="fa fa-angle-left"></i>
+    </a>
+    <a class="right carousel-control" href="#awards-carousel" data-slide="next">
+        <i class="fa fa-angle-right"></i>
+    </a>
+
+</div>

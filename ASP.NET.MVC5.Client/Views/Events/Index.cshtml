@@ -1,0 +1,90 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@model ASP.NET.MVC5.Client.Models.EventListViewModel
+@{
+    Layout = null;
+}
+<script>
+    eventsVM = function ($scope, $rootScope,sessionStore) {
+        $rootScope.title = "@Messages.Events";
+        $scope.currentPage = @Html.Raw(Model.CurrentPage)||1;
+        sessionStore.set("eventCurrentPage",$scope.currentPage);
+        $scope.pageSize = @Html.Raw(Model.PageSize)||1;
+        $scope.newstotal = @Html.Raw(Model.PagesCount)||1;
+        $scope.newsTotalpages = Array.apply(null, new Array($scope.newstotal)).map(Number.call, Number);
+
+        $scope.paginate = function (page) {
+            if (page > 0 && page <= $scope.newstotal){
+                $scope.currentPage = page;
+                sessionStore.set("newsCurrentPage",$scope.currentPage);
+            }
+        }
+        var evnts = @Html.Raw(Html.ToJson(Model.List));
+       
+        $scope.eventList =(evnts||[]).map(function(item){
+            item.dateStart=new Date(item.dateStart);
+            item.dateEnd=new Date(item.dateEnd);
+            return item;
+        });
+
+        $scope.newsList = @Html.Raw(Html.ToJson(Model.NewsList));
+    }
+</script>
+
+<div class="content container" ng-controller="eventsVM">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix"
+                ng-enumarable
+                templateid="breadcrumb-tmpl"
+                backurl="'home'"
+                backtext="'@Messages.Home'"
+                currenttext="'@Messages.Events'"></header>
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="events-wrapper col-md-8 col-sm-7">
+                    <article class="events-item page-row has-divider clearfix" ng-repeat="event in eventList">
+                        <div class="date-label-wrapper col-md-1 col-sm-2">
+                            <p class="date-label">
+                                <span class="month">{{event.dateStart | date:'MMM' : 'UTC'}}</span>
+                                <span class="date-number">{{event.dateStart | date:'dd' : 'UTC'}}</span>
+                            </p>
+                        </div><!--//date-label-wrapper-->
+                        <div class="details col-md-11 col-sm-10">
+                            <h3 class="title">{{event.title}}</h3>
+                            <p class="meta">
+                                <span class="time"><i class="fa fa-clock-o"></i>{{event.dateStart | date:'HH:mm'}} - {{event.dateEnd | date:'HH:mm'}}</span><span class="location">
+                                    <i class="fa fa-map-marker"></i><a href="#">{{event.location}}</a>
+                                </span>
+                            </p>
+                            <p class="desc"> {{event.description}}</p>
+                        </div><!--//details-->
+                    </article><!--//events-item-->
+
+                    <ul class="pagination">
+                        <li ng-class="{disabled: currentPage==1}"><a href="javascript:;" ng-click="paginate(currentPage-1)">&laquo;</a></li>
+                        <li class="" ng-class="{active:page==currentPage-1}" ng-repeat="page in newsTotalpages">
+                            <a href="javascript:;" ng-click="$parent.paginate(page+1)">
+                                {{page+1}}
+                                <span class="sr-only" ng-if="page==$parent.currentPage">(current)</span>
+                            </a>
+                        </li>
+                        <li ng-class="{disabled: currentPage==newsTotalpages.length}"><a href="javascript:;" ng-click="paginate(currentPage+1)">&raquo;</a></li>
+                    </ul>
+
+                </div> 
+
+
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                    <section class="widget has-divider">
+                        <h3 class="title">Video tour</h3>
+                        <iframe class="iframe" src="//www.youtube.com/embed/Ks-_Mh1QhMc?rel=0&amp;wmode=transparent" frameborder="0" allowfullscreen=""  ></iframe>
+                    </section> 
+                    <section class="widget has-divider"
+                             ng-enumarable
+                             templateid="aside-news-tmpl"
+                             items="newsList"
+                             caption="'@Messages.LatestNews'"></section>
+                </aside>
+            </div> 
+        </div> 
+    </div> 
+</div> 

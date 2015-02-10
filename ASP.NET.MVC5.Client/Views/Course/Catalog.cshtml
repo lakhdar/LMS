@@ -1,0 +1,176 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@{
+    Layout = null;
+}
+<script>
+    courseVM = function ($scope, $rootScope) {
+        $rootScope.title = "@Messages.CoursesCatalog";
+
+        $scope.coursTabVm = {
+            headers: ["@Messages.Featured", "@Messages.Popular", "@Messages.New"],
+            tabs: [
+                [{
+                    id: "1",
+                    img: "course-thumb-1.jpg",
+                    title: "Web Design"
+
+                }, {
+                    id: "2",
+                    img: "course-thumb-2.jpg",
+                    title: "Spanish"
+
+                }, {
+                    id: "3",
+                    img: "course-thumb-3.jpg",
+                    title: "Digital Marketing"
+
+                }, {
+                    id: "4",
+                    img: "course-thumb-4.jpg",
+                    title: "Accounting"
+
+                }
+                ], [{
+                    id: "5",
+                    img: "course-thumb-4.jpg",
+                    title: "Web Design"
+
+                }, {
+                    id: "6",
+                    img: "course-thumb-2.jpg",
+                    title: "Spanish"
+
+                }, {
+                    id: "77",
+                    img: "course-thumb-3.jpg",
+                    title: "Digital Marketing"
+
+                }, {
+                    id: "47",
+                    img: "course-thumb-1.jpg",
+                    title: "Accounting"
+
+                }
+                ], [{
+                    id: "17",
+                    img: "course-thumb-1.jpg",
+                    title: "Web Design"
+
+                }, {
+                    id: "27",
+                    img: "course-thumb-1.jpg",
+                    title: "Spanish"
+
+                }, {
+                    id: "73",
+                    img: "course-thumb-2.jpg",
+                    title: "Digital Marketing"
+
+                }, {
+                    id: "47",
+                    img: "course-thumb-4.jpg",
+                    title: "Accounting"
+
+                }
+                ]
+            ]
+        };
+        $scope.testimonials = [
+          {
+              text: 'I’m very happy interdum eget ipsum. Nunc pulvinar ut nulla eget sollicitudin. In hac habitasse platea dictumst. Integer mattis varius ipsum, posuere posuere est porta vel. Integer metus ligula, blandit ut fermentum a, rhoncus in ligula. Duis luctus.',
+              img: 'profile-1.png',
+              title: 'Gravida ultrices',
+              name: 'Marissa Spencer'
+          }, {
+              text: "I'm very pleased commodo gravida ultrices. Sed massa leo, aliquet non velit eu, volutpat vulputate odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse porttitor metus eros, ut fringilla nulla auctor a.",
+              img: 'profile-2.png',
+              title: 'Gravida ultrices',
+              name: 'Marco Antonio'
+          }, {
+              text: "I'm delighted commodo gravida ultrices. Sed massa leo, aliquet non velit eu, volutpat vulputate odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse porttitor metus eros, ut fringilla nulla auctor a.",
+              img: 'profile-3.png',
+              title: 'Gravida ultrices',
+              name: 'Kate White'
+          }
+        ];
+
+    }
+</script>
+<div class="content container" ng-controller="courseVM">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix"
+                ng-enumarable
+                templateid="breadcrumb-tmpl"
+                backurl="'home'"
+                backtext="'@Messages.Home'"
+                currenttext="'@Messages.CoursesCatalog'"
+                ></header>
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="courses-wrapper col-md-8 col-sm-7">
+
+                    <div class="featured-courses tabbed-info page-row">
+                        <ul class="nav nav-tabs" ng-init="selected=0">
+                            <li ng-class="{active:$parent.selected==$index}" ng-repeat="header in coursTabVm.headers">
+                                <a href="javascript:;" ng-click="$parent.selected=$index" data-toggle="tab">{{header}}</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane " ng-class="{active:$parent.selected==$index}" ng-repeat="tab in coursTabVm.tabs">
+                                <div class="row">
+                                    <div class="item col-md-3 col-sm-6 col-xs-6" ng-repeat="item in tab">
+                                        <img class="img-responsive" ng-src="@Url.Content("~/App_JS/compounents/collegeGreen/images/"){{item.img}}" alt="" />
+                                        <p class="text-center"><a href="#/Courses/Details/{{item.id}}">{{item.title}}</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     
+                </div>
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                    <section class="widget has-divider">
+                        <h3 class="title">@Messages.ApplyOnline</h3>
+                        <p>Donec pulvinar arcu lacus, 20% vel aliquam libero scelerisque a.</p>
+                        <p class="promo-badge">
+                            <a class="FireBush" href="#">
+                                <span class="percentage">20% <span class="off">@Messages.OFF</span></span>
+                                <br>
+                                <span class="desc">@Messages.OnlineApplication</span>
+                            </a>
+                        </p>
+                    </section><!--//widget-->
+                    
+                    <section class="widget row-divider">
+                        <h3 class="title">@Messages.StudentTestimonials</h3>
+                        <div id="testimonials-carousel" class="testimonials-carousel carousel slide" my-carousel="{ interval: false }">
+                            <div class="carousel-inner">
+                                <div class="item " ng-class="{active:$index==0}" ng-repeat="item in testimonials">
+                                    <blockquote class="quote">
+                                        <p>
+                                            <i class="fa fa-quote-left"></i>
+                                            {{item.text}}
+                                        </p>
+                                    </blockquote>
+                                    <div class="row">
+                                        <p class="people col-md-8 col-sm-3 col-xs-8">
+                                            <span class="name">{{item.name}}</span>
+                                            <br />
+                                            <span class="title">{{item.title}}</span>
+                                        </p>
+                                        <img class="profile col-md-4 pull-right" ng-src="@Url.Content("~/App_JS/compounents/collegeGreen/images/"){{item.img}}" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <a class="prev" href="#testimonials-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+                                <a class="next" href="#testimonials-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+                            </div>
+                        </div>
+                    </section>
+
+                </aside>
+            </div> 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+<h1 class="section-heading text-highlight"><span class="line">@Messages.VideoTour</span></h1>
+<div class="carousel-controls">
+    <a class="prev" href="#videos-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+    <a class="next" href="#videos-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+</div> 
+<div class="section-content">
+    <div id="videos-carousel" class="videos-carousel carousel slide" my-carousel="{ interval: false }">
+        <div class="carousel-inner">
+            <div class="item " ng-class="{active:$index==0}" ng-repeat="vdeo in videos">
+                <iframe class="video-iframe" ng-src="{{vdeo.url}}" frameborder="0" allowfullscreen=""></iframe>
+            </div> 
+        </div> 
+    </div> 
+    <p class="description">Aenean feugiat a diam tempus sodales. Quisque lorem nulla, ultrices imperdiet malesuada at, suscipit vel lorem. Nulla dignissim nisi ac aliquet semper.</p>
+</div> 

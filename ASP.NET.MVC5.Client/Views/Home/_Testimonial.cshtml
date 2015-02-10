@@ -1,0 +1,28 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+<h1 class="section-heading text-highlight"><span class="line">@Messages.Testimonials</span></h1>
+<div class="carousel-controls">
+    <a class="prev" href="#testimonials-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+    <a class="next" href="#testimonials-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+</div> 
+<div  class="section-content">
+    <div id="testimonials-carousel" class="testimonials-carousel carousel slide" my-carousel="{ interval: false }">
+        <div class="carousel-inner">
+            <div class="item " ng-class="{active:$index==0}" ng-repeat="item in testimonials">
+                <blockquote class="quote">
+                    <p>
+                        <i class="fa fa-quote-left"></i>
+                        {{item.text}}
+                    </p>
+                </blockquote>
+                <div class="row">
+                    <p class="people col-md-8 col-sm-3 col-xs-8">
+                        <span class="name">{{item.name}}</span>
+                        <br />
+                        <span class="title">{{item.title}}</span>
+                    </p>
+                    <img class="profile col-md-4 pull-right" ng-src="{{item.img}}" alt="" />
+                </div>
+            </div> 
+        </div> 
+    </div> 
+</div> 

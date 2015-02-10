@@ -1,0 +1,93 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@using Microsoft.AspNet.Identity
+<script>
+    function menuVM($scope, $location) {
+
+        $scope.menus = [
+            {
+                text: "@Messages.Home",
+                url: "",
+            },
+
+    @if (Request.IsAuthenticated)
+        {
+        <text>
+            {
+                text: "@Messages.Courses",
+                url: "Courses",
+                menus: [
+                    {
+                        text: "@Messages.Catalog",
+                        url: "Courses/Catalog",
+                    }, {
+                        text: "@Messages.AllCourses",
+                        url: "Courses",
+                    },
+                ]
+            },
+       </text>
+    }
+
+            {
+                text: "@Messages.News",
+                url: "News",
+            }, {
+                text: "@Messages.Events",
+                url: "Events",
+            },
+        ];
+
+        $scope.isActiveMenu = function (menu) {
+            var ret = false;
+            var pth = ($location.path() || "\/").split(/\//g)[1];
+            var url = (menu.url || "\/").split(/\//g)[0];
+            if (url === pth) {
+                ret = true
+            } else if (angular.isArray(menu.menus)) {
+                for (var i = 0; i < menu.menus; i++) {
+                    var res = $scope.isActiveMenu(menu.menus[i]);
+                    if (res) {
+                        ret = res;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+    }
+</script>
+
+<nav class="main-nav" role="navigation" ng-controller="menuVM">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">@Messages.ToggleNavigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button><!--//nav-toggle-->
+
+        </div><!--//navbar-header-->
+
+        <div class="navbar-collapse collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav-item " ng-class="{dropdown:!!item.menus,active:isActiveMenu(item)}" ng-repeat="item in menus">
+                    <a ng-href="#/{{item.url}}" ng-if="!!!item.menus">{{item.text}}</a>
+                    <a ng-if="!!item.menus"
+                       class="dropdown-toggle"
+                       data-toggle="dropdown"
+                       data-hover="dropdown"
+                       data-delay="0"
+                       data-close-others="false"
+                       ng-href="#/{{item.url}}">
+                        {{item.text}}
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" ng-if="!!item.menus">
+                        <li ng-repeat="child in item.menus"><a ng-href="#/{{child.url}}">{{child.text}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> 

@@ -1,0 +1,35 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@model ASP.NET.MVC5.Client.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+<hr />
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() > 0)
+    {
+        <div class="loginbox-or">
+            <div class="or-line"></div>
+            <div class="or">@Messages.OR</div>
+        </div>
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl},FormMethod.Post,new{@id="externalloginform"}))
+        {
+            @Html.AntiForgeryToken()
+          <input type="hidden" id="provider"name="provider"/>
+            <div class="social-buttons login-icons">
+
+                @foreach (AuthenticationDescription p in loginProviders)
+                {
+                    var ico = p.AuthenticationType.ToLower();
+                    var iconName = ico == "microsoft" ? "windows" : ico == "google" ? "google-plus" : ico;
+                    <div>
+                        <a id="@iconName" href="javascript:document.getElementById('provider').value='@p.AuthenticationType';document.getElementById('externalloginform').submit()" 
+                           title="@string.Format(Messages.LoginExternalAccountMsg,p.Caption)">
+                            <i class="fa fa-@iconName"></i>
+                        </a>
+                    </div>
+                }
+            </div>
+        }
+    }
+}
+

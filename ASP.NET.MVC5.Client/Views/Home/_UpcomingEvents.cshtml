@@ -1,0 +1,16 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+<h1 class="section-heading text-highlight"><span class="line">@Messages.Events</span></h1>
+<div  class="section-content">
+    <div class="event-item" ng-repeat="evnt in eventsList ">
+        <p class="date-label">
+            <span class="month">{{evnt.month}}</span>
+            <span class="date-number">{{evnt.day}}</span>
+        </p>
+        <div class="details">
+            <h2 class="title">{{evnt.title}}</h2>
+            <p class="time"><i class="fa fa-clock-o"></i>{{evnt.timeSpan}}</p>
+            <p class="location"><i class="fa fa-map-marker"></i>{{evnt.location}}</p>
+        </div>
+    </div>
+    <a class="read-more" href="#/events">@Messages.AllEvents<i class="fa fa-chevron-right"></i></a>
+</div>

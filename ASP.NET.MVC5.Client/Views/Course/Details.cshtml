@@ -1,0 +1,95 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@model ASP.NET.MVC5.Client.Models.CourseDetailsViewModel
+
+@{
+    Layout = null;
+}
+<script>
+    courseDetailVM = function ($scope, $rootScope, sessionStore) {
+        $rootScope.title = "@Html.Raw(Model.Name)";
+        $scope.course = @Html.Raw(Html.ToJson(Model));
+    }
+
+</script>
+
+<div class="content container" ng-controller="courseDetailVM">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix"
+                ng-enumarable
+                templateid="breadcrumb-tmpl"
+                backurl="'home'"
+                backtext="'@Messages.Home'"
+                currenttext="course.name"></header>
+
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="course-wrapper col-md-8 col-sm-7">
+                    <article class="course-item">
+                        <iframe class="page-row video-iframe" width="750" height="422" src="//www.youtube.com/embed/U6FvJ6jMGHU?rel=0&amp;wmode=transparent" frameborder="0" allowfullscreen=""></iframe>
+                        <div class="page-row box box-border">
+                            <ul class="list-unstyled no-margin-bottom">
+                                <li><strong>@Messages.StartDate:</strong> <em>{{course.startDate| date:'dd MMM yyyy' : 'UTC'}}</em></li>
+                                <li><strong>@Messages.Duration:</strong> <em>{{course.duration}}</em></li>
+                                <li><strong>@Messages.Level:</strong> <em>{{course.level}}</em></li>
+                                <li><strong>@Messages.Location:</strong> <em>{{course.location}}</em></li>
+                            </ul>
+                        </div><!--//page-row-->
+                        <div class="page-row">
+                            <p>{{course.desciption}} </p>
+                        </div><!--//page-row-->
+                        <div class="tabbed-info page-row" ng-init="selcted=0">
+                            <ul class="nav nav-tabs">
+                                <li class="" ng-class="{active:$parent.selcted==$index}" ng-repeat="tab in course.tabs"><a href="javascript:;" ng-click="$parent.selcted=$index">{{tab.name}}</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane " ng-class="{active:$parent.selcted==$index}" ng-repeat="tabview in course.tabs">
+                                    <p>{{tabview.description}}</p>
+                                    <div class="table-responsive" ng-if="tabview.templateType=='table'">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th ng-repeat="th in tabview.columns|filter:$index >0 ">{{th}}</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="tr in tabview.data">
+                                                    <td ng-repeat="td in tr|filter:$index >0  ">{{td}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <ul ng-if="tabview.templateType=='ul'">
+                                        <li ng-repeat="li in tabview.data "><a href="#/{{li.id}}">{{li.text}}</a></li>
+                                    </ul>
+                                    <ul ng-if="tabview.templateType=='ol'">
+                                        <li ng-repeat="li in tabview.data ">{{li}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article><!--//course-item-->
+                </div><!--//course-wrapper-->
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                    <section class="widget has-divider">
+                        <h3 class="title">Why College Green Online</h3>
+                        <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus, vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
+                        <a class="btn btn-theme" href="#"><i class="fa fa-arrow-circle-right"></i>Apply Now</a>
+                    </section>
+                    <section class="widget has-divider">
+                        <h3 class="title">Enquire about this course</h3>
+                        <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus, vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
+                        <p class="tel"><i class="fa fa-phone"></i>Tel: 0800 123 4567</p>
+                        <p class="email"><i class="fa fa-envelope"></i>Email: <a href="#">enquires@website.com</a></p>
+                    </section>
+                    <section class="widget has-divider">
+                        <h3 class="title">Related courses</h3>
+                        <ul class="list-unstyled">
+                            <li ng-repeat="crs in course.relatedCourses "><a href="#/course/details/{{crs.id}}"><i class="fa fa-book"></i> {{crs.name}}</a></li>
+                        </ul>
+                    </section><!--//widget-->
+                </aside>
+            </div><!--//page-row-->
+        </div><!--//page-content-->
+    </div><!--//page-->
+</div><!--//content-->
+    </div><!--//wrapper-->

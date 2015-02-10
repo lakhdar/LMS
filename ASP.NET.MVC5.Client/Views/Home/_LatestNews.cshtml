@@ -1,0 +1,24 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+<h1 class="section-heading text-highlight"><span class="line">@Messages.LatestNews</span></h1>
+<div class="carousel-controls">
+    <a class="prev" href="#news-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+    <a class="next" href="#news-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+</div>
+
+<div  class="section-content clearfix">
+    <div id="news-carousel" class="news-carousel carousel slide" my-carousel="{ interval: false }">
+        <div class="carousel-inner">
+            <div class="item " ng-class="{active:$index==0}" ng-repeat="item in newsList">
+                <div class="col-md-4 news-item" ng-repeat="news in item">
+                    <h2 class="title">
+                        <a href="news-single.html">{{news.title}}</a>
+                    </h2>
+                    <img class="thumb" ng-src="{{news.img}}" a alt="" />
+                    <p>{{news.summary}}</p>
+                    <a class="read-more" href="news/details/{{news.id}}">>@Messages.ReadMore<i class="fa fa-chevron-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

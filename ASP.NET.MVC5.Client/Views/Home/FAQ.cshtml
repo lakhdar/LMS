@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+
+<script>
+    faqVM = function ($scope, $rootScope) {
+        $rootScope.title = "Frequently Asked Questions";
+
+        $scope.faqs = [
+            {
+                quest: " Donec sollicitudin, mauris ut sollicitudin porta?",
+                answer: " Donec sollicitudin, mauris ut sollicitudin porta, nisi felis varius libero, quis vulputate dolor odio ac elit. Donec gravida, nisi at ornare pulvinar, nisl neque rhoncus arcu, vel malesuada neque magna et metus. Aenean lacinia ipsum consequat hendrerit condimentum. Vivamus quis nisi quis nisi dictum viverra. Cras dignissim eros at urna hendrerit interdum. In dictum, ligula laoreet consequat dignissim, velit sapien lacinia nunc, eleifend hendrerit massa nisl sed libero. Donec nulla dolor, pretium id ornare eget, adipiscing sit amet elit. Cras pharetra porta tincidunt. Nam ut convallis magna, vel iaculis lectus. Vivamus auctor a metus non semper. Ut ac ornare leo.",
+            }, {
+                quest: " Donec sollicitudin, mauris ut sollicitudin porta?",
+                answer: " Donec sollicitudin, mauris ut sollicitudin porta, nisi felis varius libero, quis vulputate dolor odio ac elit. Donec gravida, nisi at ornare pulvinar, nisl neque rhoncus arcu, vel malesuada neque magna et metus. Aenean lacinia ipsum consequat hendrerit condimentum. Vivamus quis nisi quis nisi dictum viverra. Cras dignissim eros at urna hendrerit interdum. In dictum, ligula laoreet consequat dignissim, velit sapien lacinia nunc, eleifend hendrerit massa nisl sed libero. Donec nulla dolor, pretium id ornare eget, adipiscing sit amet elit. Cras pharetra porta tincidunt. Nam ut convallis magna, vel iaculis lectus. Vivamus auctor a metus non semper. Ut ac ornare leo.",
+            }, {
+                quest: " Donec sollicitudin, mauris ut sollicitudin porta?",
+                answer: " Donec sollicitudin, mauris ut sollicitudin porta, nisi felis varius libero, quis vulputate dolor odio ac elit. Donec gravida, nisi at ornare pulvinar, nisl neque rhoncus arcu, vel malesuada neque magna et metus. Aenean lacinia ipsum consequat hendrerit condimentum. Vivamus quis nisi quis nisi dictum viverra. Cras dignissim eros at urna hendrerit interdum. In dictum, ligula laoreet consequat dignissim, velit sapien lacinia nunc, eleifend hendrerit massa nisl sed libero. Donec nulla dolor, pretium id ornare eget, adipiscing sit amet elit. Cras pharetra porta tincidunt. Nam ut convallis magna, vel iaculis lectus. Vivamus auctor a metus non semper. Ut ac ornare leo.",
+            }, {
+                quest: " Donec sollicitudin, mauris ut sollicitudin porta?",
+                answer: " Donec sollicitudin, mauris ut sollicitudin porta, nisi felis varius libero, quis vulputate dolor odio ac elit. Donec gravida, nisi at ornare pulvinar, nisl neque rhoncus arcu, vel malesuada neque magna et metus. Aenean lacinia ipsum consequat hendrerit condimentum. Vivamus quis nisi quis nisi dictum viverra. Cras dignissim eros at urna hendrerit interdum. In dictum, ligula laoreet consequat dignissim, velit sapien lacinia nunc, eleifend hendrerit massa nisl sed libero. Donec nulla dolor, pretium id ornare eget, adipiscing sit amet elit. Cras pharetra porta tincidunt. Nam ut convallis magna, vel iaculis lectus. Vivamus auctor a metus non semper. Ut ac ornare leo.",
+            }, {
+                quest: " Donec sollicitudin, mauris ut sollicitudin porta?",
+                answer: " Donec sollicitudin, mauris ut sollicitudin porta, nisi felis varius libero, quis vulputate dolor odio ac elit. Donec gravida, nisi at ornare pulvinar, nisl neque rhoncus arcu, vel malesuada neque magna et metus. Aenean lacinia ipsum consequat hendrerit condimentum. Vivamus quis nisi quis nisi dictum viverra. Cras dignissim eros at urna hendrerit interdum. In dictum, ligula laoreet consequat dignissim, velit sapien lacinia nunc, eleifend hendrerit massa nisl sed libero. Donec nulla dolor, pretium id ornare eget, adipiscing sit amet elit. Cras pharetra porta tincidunt. Nam ut convallis magna, vel iaculis lectus. Vivamus auctor a metus non semper. Ut ac ornare leo.",
+            }, {
+                quest: " Donec sollicitudin, mauris ut sollicitudin porta?",
+                answer: " Donec sollicitudin, mauris ut sollicitudin porta, nisi felis varius libero, quis vulputate dolor odio ac elit. Donec gravida, nisi at ornare pulvinar, nisl neque rhoncus arcu, vel malesuada neque magna et metus. Aenean lacinia ipsum consequat hendrerit condimentum. Vivamus quis nisi quis nisi dictum viverra. Cras dignissim eros at urna hendrerit interdum. In dictum, ligula laoreet consequat dignissim, velit sapien lacinia nunc, eleifend hendrerit massa nisl sed libero. Donec nulla dolor, pretium id ornare eget, adipiscing sit amet elit. Cras pharetra porta tincidunt. Nam ut convallis magna, vel iaculis lectus. Vivamus auctor a metus non semper. Ut ac ornare leo.",
+            },
+        ]
+
+    }
+</script>
+
+<div class="content container" ng-controller="faqVM">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">Frequently Asked Questions</h1>
+            <div class="breadcrumbs pull-right">
+                <ul class="breadcrumbs-list">
+                    <li class="breadcrumbs-label">You are here:</li>
+                    <li><a href="index.html">Home</a><i class="fa fa-angle-right"></i></li>
+                    <li class="current">FAQ</li>
+                </ul>
+            </div> 
+        </header>
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="faq-wrapper col-md-8 col-sm-7">
+                    <div class="panel-group" ng-init="selected=0">
+                        <div class="panel panel-default" ng-repeat="faq in faqs">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a href="javascript:;" ng-class="{collapsed:$parent.selected!=$index}" ng-click="$parent.selected=$parent.selected==$index?-1:$index">
+                                        {{faq.quest}}
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse-1" class="panel-collapse collapse " ng-class="{in:$parent.selected==$index}">
+                                <div class="panel-body">
+                                    {{faq.answer}}
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div><!--//faq-wrapper-->
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                    <section class="widget has-divider">
+                        <h3 class="title">Why College Green Online</h3>
+                        <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus, vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
+                        <a class="btn btn-theme" href="#"><i class="fa fa-download"></i>Download prospectus</a>
+                    </section><!--//widget-->
+                </aside>
+            </div><!--//page-row-->
+        </div><!--//page-content-->
+    </div><!--//page-->
+</div><!--//content-->

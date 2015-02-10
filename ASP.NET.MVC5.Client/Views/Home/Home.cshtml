@@ -1,0 +1,292 @@
+﻿@{
+    Layout = null;
+}
+<script>
+    function homeCtrl($scope, $sce, $rootScope) {
+        $rootScope.title = "LMS";
+        $scope.flexslider = [
+           {
+               caption: 'Join College Green Online',
+               img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/slide-1.jpg")',
+               secondary: 'Choose from over 100 online and offline courses'
+           }, {
+               caption: 'Come to our Open Days',
+               img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/slide-2.jpg")',
+               secondary: 'Donec accumsan nunc sed ipsum dapibus consectetur'
+           }, {
+               caption: 'Discover online courses',
+               img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/slide-3.jpg")',
+               secondary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+           }, {
+               caption: 'Nam ultricies accumsan pellentesque',
+               img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/slide-4.jpg")',
+               secondary: 'In justo orci, ornare vitae nulla sed, suscipit suscipit augue'
+           }
+
+        ];
+        $scope.newsList = [
+            [
+                {
+                    id: 1,
+                    title: 'Phasellus scelerisque metus',
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/news-thumb-1.jpg")',
+                    summary: 'Suspendisse purus felis, porttitor quis sollicitudin sit amet, elementum et tortor. Praesent lacinia magna in malesuada vestibulum. Pellentesque urna libero.'
+                }, {
+                    id: 2,
+                    title: 'Morbi at vestibulum turpis',
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/news-thumb-2.jpg")',
+                    summary: 'Nam feugiat erat vel neque mollis, non vulputate erat aliquet. Maecenas ac leo porttitor, semper risus condimentum, cursus elit. Vivamus vitae libero tellus.'
+                }, {
+                    id: 3,
+                    title: 'Aliquam id iaculis urna',
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/news-thumb-3.jpg")',
+                    summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque. Proin elementum tristique euismod. '
+                }
+            ], [
+                {
+                    id: 4,
+                    title: 'Phasellus scelerisque metus',
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/news-thumb-4.jpg")',
+                    summary: 'Suspendisse purus felis, porttitor quis sollicitudin sit amet, elementum et tortor. Praesent lacinia magna in malesuada vestibulum. Pellentesque urna libero.'
+                }, {
+                    id: 5,
+                    title: 'Morbi at vestibulum turpis',
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/news-thumb-5.jpg")',
+                    summary: 'Nam feugiat erat vel neque mollis, non vulputate erat aliquet. Maecenas ac leo porttitor, semper risus condimentum, cursus elit. Vivamus vitae libero tellus.'
+                }, {
+                    id: 6,
+                    title: 'Aliquam id iaculis urna',
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/news-thumb-6.jpg")',
+                    summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum mauris eget sapien consectetur pellentesque. Proin elementum tristique euismod.'
+                }
+            ]
+        ];
+
+        $scope.eventsList = [
+                {
+                    id: 1,
+                    month: "FEB",
+                    day: "18",
+                    title: "Open Day",
+                    timeSpan: "10:00am - 18:00pm",
+                    location: "East Campus"
+                }, {
+                    id: 2,
+                    month: "SEP",
+                    day: "06",
+                    title: "E-learning at College Green",
+                    timeSpan: "10:00am - 16:00pm",
+                    location: "Learning Center"
+                }, {
+                    id: 3,
+                    month: "JUN",
+                    day: "23",
+                    title: "Career Fair",
+                    timeSpan: "09:45am - 16:00pm",
+                    location: "Library"
+                }, {
+                    id: 4,
+                    month: "May",
+                    day: "17",
+                    title: "Science Seminar",
+                    timeSpan: "14:00pm - 18:00pm",
+                    location: "Library"
+                }
+        ];
+
+        $scope.testimonials = [
+           {
+               text: 'I’m very happy interdum eget ipsum. Nunc pulvinar ut nulla eget sollicitudin. In hac habitasse platea dictumst. Integer mattis varius ipsum, posuere posuere est porta vel. Integer metus ligula, blandit ut fermentum a, rhoncus in ligula. Duis luctus.',
+               img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/profile-1.png")',
+               title: 'Gravida ultrices',
+               name: 'Marissa Spencer'
+           }, {
+               text: "I'm very pleased commodo gravida ultrices. Sed massa leo, aliquet non velit eu, volutpat vulputate odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse porttitor metus eros, ut fringilla nulla auctor a.",
+               img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/profile-2.png")',
+               title: 'Gravida ultrices',
+               name: 'Marco Antonio'
+           }, {
+               text: "I'm delighted commodo gravida ultrices. Sed massa leo, aliquet non velit eu, volutpat vulputate odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse porttitor metus eros, ut fringilla nulla auctor a.",
+               img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/profile-3.png")',
+               title: 'Gravida ultrices',
+               name: 'Kate White'
+           }
+        ];
+
+        $scope.courseCategories = [
+            {
+                id: 1,
+                text: "Accounting & Finance"
+            }, {
+                id: 2,
+                text: "Biological Sciences"
+            }, {
+                id: 3,
+                text: "Business Studies"
+            }, {
+                id: 4,
+                text: "Computer Science"
+            }, {
+                id: 5,
+                text: "Creative Arts & Media"
+            }, {
+                id: 6,
+                text: "Drama"
+            }, {
+                id: 7,
+                text: "Education"
+            }, {
+                id: 8,
+                text: "Engineering"
+            }, {
+                id: 9,
+                text: "Film Studies"
+            }, {
+                id: 10,
+                text: "Fitness Training"
+            }, {
+                id: 11,
+                text: "Hospitality"
+            }, {
+                id: 12,
+                text: "History"
+            }, {
+                id: 13,
+                text: "International Relations"
+            }, {
+                id: 14,
+                text: "Law"
+            }, {
+                id: 15,
+                text: "Mathematics"
+            }, {
+                id: 16,
+                text: "Music"
+            }, {
+                id: 17,
+                text: "Physics"
+            }, {
+                id: 18,
+                text: "Religion"
+            }, {
+                id: 19,
+                text: "Social Science"
+            }
+        ];
+
+        $scope.videos =
+            [
+                {
+                    id: 19,
+                    url: $sce.trustAsResourceUrl("//www.youtube.com/embed/r9LelXa3U_I?rel=0&amp;wmode=transparent")
+                }, {
+                    id: 155,
+                    url: $sce.trustAsResourceUrl("//www.youtube.com/embed/RcGyVTAoXEU?rel=0&amp;wmode=transparent")
+                }, {
+                    id: 155,
+                    url: $sce.trustAsResourceUrl("//www.youtube.com/embed/Ks-_Mh1QhMc?rel=0&amp;wmode=transparent")
+                }
+            ];
+
+        $scope.awards = [
+            [
+                {
+                    id: 1,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award1.jpg")',
+                }, {
+                    id: 2,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award2.jpg")',
+                }, {
+                    id: 3,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award3.jpg")',
+                }, {
+                    id: 3,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award4.jpg")',
+                }, {
+                    id: 3,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award5.jpg")',
+                }, {
+                    id: 3,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award6.jpg")',
+                }
+            ], [
+                {
+                    id: 1,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award7.jpg")',
+                }, {
+                    id: 2,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award6.jpg")',
+                }, {
+                    id: 3,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award5.jpg")',
+                }, {
+                    id: 3,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award4.jpg")',
+                }, {
+                    id: 3,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award3.jpg")',
+                }, {
+                    id: 3,
+                    img: '@Url.Content("~/App_JS/compounents/collegeGreen/images/award2.jpg")',
+                }
+            ]
+
+        ];
+    }
+</script>
+
+<div class="content container" ng-controller="homeCtrl">
+
+    @{Html.RenderPartial("_Slider");}
+
+    <section class="promo box box-dark">
+        <div class="col-md-9">
+            <h1 class="section-heading">Why College Green</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum orci eget nulla mattis, quis viverra tellus porta. Donec vitae neque ut velit eleifend commodo. Maecenas turpis odio, placerat eu lorem ut, suscipit commodo augue.  </p>
+        </div>
+        <div class="col-md-3">
+            <a class="btn btn-cta" href="#"><i class="fa fa-play-circle"></i>Apply Now</a>
+        </div>
+    </section>
+
+    <section class="news">
+        @{Html.RenderPartial("_LatestNews");}
+    </section>
+
+    <div class="row cols-wrapper">
+        <div class="col-md-3">
+            <section class="events">
+                @{Html.RenderPartial("_UpcomingEvents");}
+            </section>
+        </div>
+        <div class="col-md-6">
+            <section class="course-finder">
+                @{Html.RenderPartial("_CourseFinder");}
+            </section>
+
+            <section class="video">
+                @{Html.RenderPartial("_Videos");}
+            </section>
+        </div>
+
+        <div class="col-md-3">
+            <section class="links">
+                <h1 class="section-heading text-highlight"><span class="line">Quick Links</span></h1>
+                <div class="section-content">
+                    <p><a href="#"><i class="fa fa-caret-right"></i>E-learning Portal</a></p>
+                    <p><a href="#"><i class="fa fa-caret-right"></i>Gallery</a></p>
+                    <p><a href="#"><i class="fa fa-caret-right"></i>Job Vacancies</a></p>
+                    <p><a href="#"><i class="fa fa-caret-right"></i>Contact</a></p>
+                </div><!--//section-content-->
+            </section><!--//links-->
+            <section class="testimonials">
+                @{Html.RenderPartial("_Testimonial");}
+            </section>
+        </div>
+    </div>
+    <section class="awards">
+        @{Html.RenderPartial("_Awards");}
+    </section>
+
+
+</div> 

@@ -1,0 +1,102 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@using ASP.NET.MVC5.Client.Models
+@model LoginViewModel
+@{
+    Layout = "~/Views/Account/_LoginLayout.cshtml";
+}
+}
+<script>
+
+    function logintrl($scope, $rootScope) {
+        $rootScope.title = "@Messages.Login"
+        $scope.Email="@Html.Raw(Model.Email)";
+    }
+</script>
+
+<div class="content container" ng-controller="logintrl">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix">
+            <h1 class="heading-title pull-left">@Messages.Login</h1>
+        </header>
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="col-md-6">
+
+                    <!-- Some content -->
+                    <h3 class="title">
+                        <a href="javascript:;">Morbi tincidunt posuere turpis eu laoreet</a>
+                    </h3>
+                    <p>Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. </p>
+                    <h4 class="title">Maecenas hendrerit neque id</h4>
+                    <div class="lists">
+                        <ul>
+                            <li>Etiam adipiscing posuere justo, nec iaculis justo dictum non</li>
+                            <li>Cras tincidunt mi non arcu hendrerit eleifend</li>
+                            <li>Aenean ullamcorper justo tincidunt justo aliquet et lobortis diam faucibus</li>
+                            <li>Maecenas hendrerit neque id ante dictum mattis</li>
+                            <li>Vivamus non neque lacus, et cursus tortor</li>
+                        </ul>
+                    </div>
+                    <p>Nullam in est urna. In vitae adipiscing enim. In ut nulla est. Nullam in est urna. In vitae adipiscing enim. Curabitur rhoncus condimentum lorem, non convallis dolor faucibus eget. In ut nulla est. </p>
+                </div>
+                <!-- Login form -->
+                <div class="col-md-6">
+                    <div class="formy well">
+                        <h4 class="title">
+                            @Messages.LoginToYourAccount
+                        </h4>
+                        <div class="form">
+
+                            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", name = "loginform", @novalidate = "" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger", @id = "validationSummary" })
+                                <div class="form-group has-feedback " ng-class="{'has-error':loginform.Email.$dirty &&(loginform.Email.$error.email||loginform.Email.$error.required),'has-success':loginform.Email.$dirty &&!loginform.Email.$error.email&&!loginform.Email.$error.required}">
+                                    @Html.LabelFor(m => m.Email, new { @class = "col-md-3 control-label" })
+                                    <div class="col-md-8">
+                                        <input type="email" class="form-control" id="username2" required ng-model="Email" name="Email" value="" />
+                                        <span class="glyphicon glyphicon-envelope form-control-feedback text-muted"></span>
+                                        <span class="control-label" ng-show="loginform.Email.$dirty && loginform.Email.$error.required" id="required_email_msg">@Messages.EmailRequired</span>
+                                        <span class="control-label" ng-show="loginform.Email.$dirty && loginform.Email.$error.email" id="invalid_email_msg">@Messages.InvalidEmailAddress</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group  has-feedback" ng-class="{'has-error':loginform.Password.$dirty &&loginform.Password.$error.required,'has-success':loginform.Password.$dirty &&!loginform.Password.$error.required}">
+                                    @Html.LabelFor(m => m.Password, new { @class = "col-md-3 control-label" })
+                                    <div class=" col-md-8">
+                                        <input type="password" class="form-control" id="password" ng-model="Password" name="Password" required>
+                                        <span class="glyphicon glyphicon-lock form-control-feedback text-muted"></span>
+                                        <span class="control-label" ng-show="loginform.Password.$dirty && loginform.Password.$error.required" id="pwd_email_msg">@Messages.PasswordRequiredMsg</span>
+                                    </div>
+                                </div>
+                                    <!-- Checkbox -->
+                                <div class="form-group ">
+                                    <div class="col-md-8 col-md-offset-3">
+                                        <div class="checkbox-nice checkbox-inline">
+                                            <input type="checkbox" id="checkbox-inl-2" ng-model="RemeberMe">
+                                            <label for="checkbox-inl-2">
+                                                @Messages.RememberMe
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <!-- Buttons -->
+                                <div class="form-group">
+                                    <!-- Buttons -->
+                                    <div class="col-md-8 col-md-offset-3">
+                                        <button type="submit" class="btn btn-theme btn-subscribe" ng-class="{disabled:!loginform.$valid}" id="submitbtn">@Messages.Login</button>
+                                    </div>
+                                </div>
+                            }
+
+                            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = "/" })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

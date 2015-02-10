@@ -1,0 +1,89 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@model ASP.NET.MVC5.Client.Models.NewsListViewModels
+@{
+    Layout = null;
+}
+<script>
+    newsVM = function ($scope, $rootScope,sessionStore) {
+        $rootScope.title = "@Messages.News";
+        $scope.currentPage = @Html.Raw(Model.CurrentPage)||1; 
+        sessionStore.set("newsCurrentPage",$scope.currentPage);
+        $scope.pageSize = @Html.Raw(Model.PageSize)||1;
+        $scope.newstotal = @Html.Raw(Model.PagesCount)||1;
+        $scope.newsTotalpages = Array.apply(null, new Array($scope.newstotal)).map(Number.call, Number);
+
+        $scope.paginate = function (page) {
+            if (page > 0 && page <= $scope.newstotal){
+                $scope.currentPage = page;
+                sessionStore.set("newsCurrentPage",$scope.currentPage);
+            }
+        }
+        $scope.newsList = @Html.Raw(Html.ToJson(Model.List));
+        var evnts = @Html.Raw(Html.ToJson(Model.eventsList));
+
+        $scope.eventsList =(evnts||[]).map(function(item){
+            item.dateStart=new Date(item.dateStart);
+            item.dateEnd=new Date(item.dateEnd);
+            return item;
+        });
+    }
+</script>
+
+<div class="content container" ng-controller="newsVM">
+    <div class="page-wrapper">
+        <header class="page-heading clearfix"
+                ng-enumarable
+                templateid="breadcrumb-tmpl"
+                backurl="'home'"
+                backtext="'@Messages.Home'"
+                currenttext="'@Messages.News'"></header>
+        <div class="page-content">
+            <div class="row page-row">
+                <div class="news-wrapper col-md-8 col-sm-7">
+                    <article class="news-item page-row has-divider clearfix row" ng-repeat="item in newsList">
+                        <figure class="thumb col-md-2 col-sm-3 col-xs-4">
+                            <img class="img-responsive" ng-src="@Url.CdnContentUrl("~/App_JS/compounents/collegeGreen/images/"){{item.img}}" alt="" />
+                        </figure>
+                        <div class="details col-md-10 col-sm-9 col-xs-8">
+                            <h3 class="title"><a href="#/News/Details/{{item.id}}">{{item.tilte}}</a></h3>
+                            <p>{{item.text}}</p>
+                            <a class="btn btn-theme read-more" href="#/News/Details/{{item.id}}">@Messages.ReadMore<i class="fa fa-chevron-right"></i></a>
+                        </div>
+                    </article><!--//news-item-->
+
+                    <ul class="pagination">
+                        <li ng-class="{disabled: currentPage==1}"><a href="javascript:;" ng-click="paginate(currentPage-1)">&laquo;</a></li>
+                        <li class="" ng-class="{active:page==currentPage-1}" ng-repeat="page in newsTotalpages">
+                            <a href="javascript:;" ng-click="$parent.paginate(page+1)">
+                                {{page+1}}
+                                <span class="sr-only" ng-if="page==$parent.currentPage">(current)</span>
+                            </a>
+                        </li>
+                        <li ng-class="{disabled: currentPage==newsTotalpages.length}"><a href="javascript:;" ng-click="paginate(currentPage+1)">&raquo;</a></li>
+                    </ul>
+                </div>
+
+                <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                    <section class="widget has-divider">
+                        <h3 class="title">Arcu Aliquet Quam Vel</h3>
+                        <p>
+                            Maecenas nisl urna, condimentum ac justo a, adipiscing hendrerit magna. Fusce pharetra laoreet accumsan.
+                            Phasellus elit sapien, consequat vel sapien sit amet, condimentum vulputate odio. Aliquam fringilla justo quis est placerat,
+                            eu imperdiet lorem cursus. Curabitur pretium nulla lorem, sed egestas ante vestibulum dignissim.
+                        </p>
+                    </section><!--//widget-->
+                    <section class="widget has-divider"
+                             ng-enumarable
+                             templateid="aside-events-tmpl"
+                             items="eventsList"
+                             caption="'@Messages.UpcomingEvents'"></section>
+
+                    <section class="widget">
+                        <h3 class="title">Flickr Photo Stream</h3>
+                        <ul id="flickr-photos"></ul><!--//flickr-photos-->
+                    </section><!--//widget-->
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>

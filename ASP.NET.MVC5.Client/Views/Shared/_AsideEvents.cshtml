@@ -1,0 +1,14 @@
+﻿<h3 class="title">{{caption}}</h3>
+<article class="events-item row page-row" ng-repeat="event in data">
+    <div class="date-label-wrapper col-md-3 col-sm-4 col-xs-4">
+        <p class="date-label">
+            <span class="month">{{event.dateStart | date:'MMM'}}</span>
+            <span class="date-number">{{event.dateStart | date:'dd'}}</span>
+        </p>
+    </div><!--//date-label-wrapper-->
+    <div class="details col-md-9 col-sm-8 col-xs-8">
+        <h5 class="title">{{event.title}}</h5>
+        <p class="time text-muted"><i class="fa fa-clock-o"></i>{{event.dateStart | date:'HH:mm'}} - {{event.dateEnd | date:'HH:mm'}}</p>
+        <p class="location text-muted"><i class="fa fa-map-marker"></i>{{event.location}}</p>
+    </div><!--//details-->
+</article>

@@ -1,0 +1,74 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    @Styles.Render("~/Content/css")
+    <link href="~/App_JS/compounents/collegeGreen/styles.css" rel="stylesheet" />
+
+    <title>{{title}}</title>
+
+</head>
+<body class="home-page">
+    <nav class="wrapper">
+        <!-- ******HEADER****** -->
+        <header class="header">
+            <div class="top-bar">
+                <div class="container">
+                    <ul class="social-icons col-md-6 col-sm-6 col-xs-12 hidden-xs">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="row-end"><a href="#"><i class="fa fa-rss"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="header-main container">
+                <h1 class="logo col-md-4 col-sm-4">
+                    <a href="index.html"><img id="logo" src="@Url.Content("~/App_JS/compounents/collegeGreen/images/logo.png") " alt="Logo" /></a>
+                </h1>
+                <div class="info col-md-8 col-sm-8">
+                    <ul class="menu-top navbar-right hidden-xs">
+                        <li class="divider">@Html.ActionLink(Messages.Home, "index", "home")</li>
+                        <li><a href="#/contact">@Messages.Contact</a></li>
+                    </ul>
+                    <br />
+                    <div class="contact pull-right">
+                        <p class="phone"><i class="fa fa-phone"></i>@Messages.CallUsToday 0800 123 4567</p>
+                        <p class="email"><i class="fa fa-envelope"></i>enquires@website.com</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        @RenderBody()
+
+    </nav>
+
+    <!-- ******FOOTER****** -->
+    @Html.Partial("_Footer")
+    <script src="~/App_JS/compounents/jquery/2.1.1/jquery.min.js"></script>
+    <script src="~/App_JS/compounents/angular/1.3.0/angular.min.js"></script>
+    <script src="~/App_JS/compounents/angular/1.3.0/angular-route.min.js"></script>
+    <script src="~/App_JS/compounents/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script>
+        var app = angular.module('app', [
+         'ngRoute',          // routing
+        ]).config(['$controllerProvider', function ($controllerProvider) {
+            $controllerProvider.allowGlobals();
+        }]);
+
+    </script>
+
+</body>
+</html>

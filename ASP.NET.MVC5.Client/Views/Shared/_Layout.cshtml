@@ -1,0 +1,81 @@
+﻿@using ASP.NET.MVC5.Client.Resources
+@{
+
+    bool isIE8 = (Request.Browser.Browser == "IE") && ((Request.Browser.MajorVersion == 8));
+    bool isIE9 = (Request.Browser.Browser == "IE") && ((Request.Browser.MajorVersion == 9));
+    string htmlClass = isIE8 ? "ie8" : isIE9 ? "ie9" : "";
+
+}
+
+<!DOCTYPE html>
+<html lang="en" class="@htmlClass" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <base href="@Url.Content("~/")" />
+    <link rel="shortcut icon" href="favicon.ico">
+    @Styles.Render("~/Content/css")
+
+    <link id="theme-style" rel="stylesheet" ng-href="{{'@Url.Content("~/App_JS/compounents/collegeGreen/")'+ (currentStyle?currentStyle:'styles')+'.css'}}">
+    
+    @if (isIE8)
+    {
+        @Scripts.Render("~/bundles/ieshim")
+    }
+
+    <title>{{title}}</title>
+
+</head>
+<body class="home-page">
+    <div class="wrapper">
+        <!-- ******HEADER****** -->
+        @Html.Partial("_Header")
+
+        <!-- ******NAV****** -->
+        @Html.Partial("_Menu")
+
+        @RenderBody()
+
+    </div> 
+    <!-- ******FOOTER****** -->
+    @Html.Partial("_Footer")
+    <!-- *****CONFIGURE STYLE****** -->
+    @Html.Partial("_Config")
+
+
+    <!-- Javascript -->
+    @if (isIE8)
+    {
+        @Scripts.Render("~/bundles/scriptsLegacy")
+    }
+    else
+    {
+        @Scripts.Render("~/bundles/scripts")
+    }
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/ng-template" id="aside-events-tmpl">
+       @Html.Partial("_AsideEvents")
+    </script>
+    <script type="text/ng-template" id="aside-news-tmpl">
+        @Html.Partial("_AsideNews")
+    </script>
+
+    <script type="text/ng-template" id="breadcrumb-tmpl">
+        <h1 class="heading-title pull-left">{{$parent.title}}</h1>
+        <div class="breadcrumbs pull-right">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-label">@Messages.YouHreHere</li>
+                <li><a ng-href="#/{{backurl}}">{{backtext}}</a><i class="fa fa-angle-right"></i></li>
+                <li class="current">{{currenttext}}</li>
+            </ul>
+        </div>
+    </script>
+</body>
+</html>
