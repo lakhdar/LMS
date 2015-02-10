@@ -215,6 +215,7 @@
     <Compile Include="Models\AspnetIdentity\ApplicationUserStore.cs" />
     <Compile Include="Models\AspnetIdentity\PhoneNumberModelTokenManagementServiceProvider.cs" />
     <Compile Include="Models\AspnetIdentity\SmsManagementServices.cs" />
+    <Compile Include="Models\CourseViewModels.cs" />
     <Compile Include="Models\EventsViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NewsViewModels.cs" />

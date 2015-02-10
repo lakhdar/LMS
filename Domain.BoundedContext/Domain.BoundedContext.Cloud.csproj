@@ -54,6 +54,8 @@
     <Compile Include="BlogingModule\News\INewsRepository.cs" />
     <Compile Include="ElearningModule\CourseAssign\CourseAssign.cs" />
     <Compile Include="ElearningModule\CourseAssign\ICourseAssignRepository.cs" />
+    <Compile Include="ElearningModule\Course\CourseLevel.cs" />
+    <Compile Include="ElearningModule\Course\CourseMode.cs" />
     <Compile Include="ElearningModule\Course\ICourseRepository.cs" />
     <Compile Include="ElearningModule\Course\Course.cs" />
     <Compile Include="ERPModule\Address\Address.cs" />
