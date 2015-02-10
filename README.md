@@ -2,23 +2,24 @@
 Elearning management System 
 
  this is E-learning platform solution to manage online courses and surveys . 
+I use theses technologies for development
+ - layred Architecture with DDD and TDD 
 
- Use layred Architecture with DDD and TDD 
+ - Repository unit of work pattern 
 
-Repository unit of work pattern 
+ - EntityFramework with Sql server
 
-EntityFramework with Sql server
+ - MongoDb 
 
-MongoDb 
+ - Lucene.net 
 
-Lucene.net 
+ - ASP MVC5 and angularJs global controllers for Web application
 
-ASP MVC5 and angularJs global controllers for Web application
+ - Apache Cordova for mobile App 
 
-Apache Cordova for mobile App 
+ - Selenuim Webdriver for Automated testing 
 
-Selenuim Webdriver for Automated testing 
+ - Unity for Dependecy injection 
 
-Unity for Dependecy injection 
-
-ASP WebAPI for distributed e-learning  services 
+ - ASP WebAPI for distributed e-learning  services 
+ - And others 
